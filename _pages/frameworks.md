@@ -6,5 +6,3 @@ collection: frameworks
 # entries_layout: grid
 classes: wide
 ---
-
-Framework Collection
