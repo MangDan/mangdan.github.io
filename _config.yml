@@ -211,13 +211,13 @@ kramdown:
 
 # Collections
 collections:
+  oracle-cloud-infrastructure:
+    output: true
+    permalink: /:collection/:path/
   cloud:
     output: true
     permalink: /:collection/:path/
   cloud-native:
-    output: true
-    permalink: /:collection/:path/
-  frameworks:
     output: true
     permalink: /:collection/:path/
   api:
@@ -245,6 +245,18 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _oracle-cloud-infrastructure
+  - scope:
+      path: ""
+      type: oracle-cloud-infrastructure
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "oracle-cloud-infrastructure"
   # _cloud
   - scope:
       path: ""
@@ -259,16 +271,6 @@ defaults:
   - scope:
       path: ""
       type: cloud-native
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      comments: true
-      related: true
-  - scope:
-      path: ""
-      type: frameworks
     values:
       layout: single
       author_profile: true

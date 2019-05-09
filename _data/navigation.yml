@@ -2,13 +2,24 @@
 main:
   - title: "Home"
     url: /
+  - title: "Oracle Cloud Infrastructure"
+    url: /oracle-cloud-infrastructure/
   - title: "Tags Archive"
     url: /tags/
-  - title: "Year Archive"
-    url: /year-archive/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+# documentation links
+oracle-cloud-infrastructure:
+  - title: Getting Started
+    children:
+      - title: "Quick-Start Guide"
+        url: /oracle-cloud-infrastructure/quick-start-guide/
+  - title: Customization
+    children:
+      - title: "Configuration"
+        url: /oracle-cloud-infrastructure/configuration/
