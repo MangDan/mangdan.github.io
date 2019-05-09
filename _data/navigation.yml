@@ -4,14 +4,10 @@ main:
     url: /cloud/
   - title: "Cloud Native"
     url: /cloud-native/
-  - title: "Microservices & Frameworks"
-    url: /microservices-frameworks/
+  - title: "Frameworks"
+    url: /frameworks/
   - title: "API"
     url: /api/
-  - title: "Collections"
-    url: /collection-archive/
-  - title: "About"
-    url: /about/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
