@@ -212,9 +212,19 @@ kramdown:
 
 # Collections
 collections:
-  microservices:
+  cloud:
     output: true
     permalink: /:collection/:path/
+  cloud-native:
+    output: true
+    permalink: /:collection/:path/
+  microservices-frameworks:
+    output: true
+    permalink: /:collection/:path/
+  api:
+    output: true
+    permalink: /:collection/:path/
+  
 
 # Defaults
 defaults:
@@ -236,10 +246,40 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _microservices
+  # _cloud
   - scope:
       path: ""
-      type: microservices
+      type: cloud
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      comments: true
+      related: true
+  - scope:
+      path: ""
+      type: cloud-native
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      comments: true
+      related: true
+  - scope:
+      path: ""
+      type: microservices-frameworks
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      comments: true
+      related: true
+  - scope:
+      path: ""
+      type: api
     values:
       layout: single
       author_profile: true

@@ -1,11 +1,17 @@
 # main links
 main:
-  - title: "Home"
-    url: https://mangdan.github.io/collection-archive/
-  - title: "Microservices"
-    url: https://mangdan.github.io/microservices/
+  - title: "Cloud"
+    url: /cloud/
+  - title: "Cloud Native"
+    url: /cloud-native/
+  - title: "Microservices & Frameworks"
+    url: /microservices-frameworks/
+  - title: "API"
+    url: /api/
+  - title: "Collections"
+    url: /collection-archive/
   - title: "About"
-    url: https://mangdan.github.io/about/
+    url: /about/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
