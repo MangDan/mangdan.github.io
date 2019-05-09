@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Home"
+    url: https://mangdan.github.io/collection-archive/
   - title: "Microservices"
     url: https://mangdan.github.io/microservices/
   - title: "About"
