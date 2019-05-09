@@ -1,9 +1,11 @@
 # main links
 main:
-  - title: "Home"
+  - title: "Posts"
     url: /
-  - title: "Oracle Cloud Infrastructure"
-    url: /oci/quick-start-guide/
+  - title: "Oracle Cloud"
+    url: /oci/oci-overview/
+  - title: "Emerging Technology"
+    url: /oci/emerging-technology/
   - title: "Tags Archive"
     url: /tags/
   # - title: "Sample Posts"
@@ -15,11 +17,11 @@ main:
 
 # documentation links
 oci:
-  - title: Getting Started
+  - title: Oracle Cloud Infrastructure
     children:
-      - title: "Quick-Start Guide"
-        url: /oci/quick-start-guide/
-  - title: Customization
+      - title: "OCI Overview"
+        url: /oci/oci-overview/
+  - title: Integration Cloud
     children:
-      - title: "Configuration"
-        url: /oci/configuration/
+      - title: "Adapters"
+        url: /oci/integration/adapters/

@@ -1,6 +1,6 @@
 ---
-title: "Configuration"
-permalink: /oci/configuration/
+title: "Adapters"
+permalink: /oci/integration/adapters/
 excerpt: "Settings for configuring and customizing the theme."
 last_modified_at: 2019-01-15T08:31:44-05:00
 toc: true

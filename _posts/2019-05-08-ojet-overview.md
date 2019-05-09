@@ -8,12 +8,12 @@ Oracle에서 개발한 오픈소스 프론트엔드 오픈소스 프레임워크
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
-# Oracle JET
+### Oracle JET
 
 Oracle JET은 새로운 형태의 프론트엔드 프레임워크라기 보다는 여러가지 오픈소스 라이브러리와 Oracle의 UI 컴포넌트인 Alta UI를 포함해서 만든 프론트엔드 프레임워크입니다.  
 
 Oracle JET은 다음과 같은 오픈 소스 라이브러리를 사용합니다.
-<img src="../assets/images/ojet-open-sources.png" width="60%">
+<img src="../assets/images/ojet-open-sources.png" width="80%">
 
 JQuery는 말이 필요없는 유명한 Javascript Library입니다.  
 Apache Cordova 또한 유명한 하이브리드 모바일 개발 프레임워크입니다.
@@ -21,16 +21,17 @@ Apache Cordova 또한 유명한 하이브리드 모바일 개발 프레임워크
 
 여기서는 간단하게 Knockout에 대해서만 설명합니다.
 
-# Knockout
+### Knockout
 
 <img src="../assets/images/ojet-knockout-logo.png" width="60%">
 
-[Knockout](https://knockoutjs.com/)은 Steve Sanderson에 의해서 개발되었으며, MIT license를 따르는 MVVM (Model-View-View Model) 패턴을 지원하는 가벼운 (66kb minified) Javascript 프레임워크로 선언적으로 쉽게 View와 Model간의 양방향 데이터 바인딩을 할 수 있도록 지원해줍니다. 이를 통해 다이나믹한 페이지 구성을 쉽게 할 수 있도록 만들어줍니다.
+Steve Sanderson에 의해 개발된 [Knockout](https://knockoutjs.com/)은 MIT license를 따르는 MVVM (Model-View-View Model) 패턴을 지원하는 가벼운 (66kb minified) Javascript 프레임워크로 선언적으로 쉽게 View와 Model간의 양방향 데이터 바인딩을 할 수 있도록 지원해줍니다. 이를 통해 다이나믹한 페이지 구성을 쉽게 할 수 있도록 만들어줍니다.
 
 Knockout은 View(HTML)와 View-Model(JS)가 1:1로 매핑이 되어 데이터가 바인딩 됩니다. View-Model에서는 필요에 따라 서버 사이드에서 제공되는 API를 호출하여 Model을 생성하여 이를 활용하게 됩니다. 다음은 Knockout 아키텍처 입니다.  
-<img src="../assets/images/ojet-knockout-architecture.png" width="60%">
-<center><b>Knockout Architecture</b></center>
-(참조 : [Microsoft - Knockout.js를 사용하여 동적 UI 만들기] https://docs.microsoft.com/ko-kr/aspnet/web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5)  
+
+<img src="../assets/images/ojet-knockout-architecture.png" width="80%">{: .align-center}
+Knockout Architecture
+{: .text-center}
 
 Knockout 주요 컨셉은 다음과 같습니다.
 <img src="../assets/images/ojet-knockout-key-concepts.png" width="80%">
@@ -51,19 +52,22 @@ Knockout과 관련해서는 다음의 공식 홈페이지에서 많은 정보를
     * [Knockout Tutorial](http://learn.knockoutjs.com/)
     * [Knockout Live Example](https://knockoutjs.com/examples/)
 
-# Oracle JET Cookbook
+### Oracle JET Cookbook
 
 Knockout과 RequireJS를 잘 알면 좋겠지만, 배우는데 시간이 많이 걸리는 것이 사실입니다. Oracle에서는 빠르게 JET을 적용해서 사용할 수 있도록 JET Cookbook을 제공합니다. 다양한 UI Component에 대한 예제소스와 바로 테스트해볼 수 있는 환경을 제공하기 때문에 처음부터 Knockout과 RequireJS에 대한 기본적인 개념 정도만 있다면 쉽게 적용할 수 있습니다.
 
 [Oracle JET Cookbook 바로 가기](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html)
 
 ![](../assets/images/ojet-components.png)
-<center><b>Oracle JET Components</b></center>
+Oracle JET Components
+{: .text-center}
+
 
 ![](../assets/images/ojet-basic-table-source.png)
-<center><b>Basic Table UI와 예제 소스</b></center>
+Basic Table UI와 예제 소스
+{: .text-center}
 
-# Oracle JET Quickstart
+### Oracle JET Quickstart
 Oracle JET를 시작하기 위해서는 Nodejs 설치가 필요합니다. [여기](https://nodejs.org/ko/)에서 운영체제에 맞는 버전으로 설치합니다. Nodejs 설치가 끝나면 npm을 통해서 Oracle JET CLI를 설치합니다.
 ```
 npm install -g @oracle/ojet-cli
@@ -91,7 +95,7 @@ ojet add hybrid
 ojet serve android||ios||windows
 ```
 
-# Oracle JET Hello World Application
+### Oracle JET Hello World Application
 
 간단히 Hello World 프로젝트를 생성해보고 기본 JET 테이블 컴포넌트를 추가해보도록 하겠습니다.
 ```
@@ -194,7 +198,7 @@ Watcher: themes is ready.
 실행하면 다음과 같은 기본 JET UI를 볼 수 있습니다.
 ![](../assets/images/ojet-basic-template-ui.png)
 
-# JET 프로젝트에 Table Component 적용하기
+### JET 프로젝트에 Table Component 적용하기
 다운로드 받은 Template 구조를 보면 기본 페이지인 index.html과 js 하위에 main.js, appController.js, view와 viewModels에 각각 html 파일과 동일한 이름의 js 파일이 1:1로 매핑되어 있는 것을 볼 수 있습니다.
 
 <img src="../assets/images/ojet-project-structure.png" width="20%">
@@ -482,5 +486,5 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojarraydataprovider', 'ojs/ojkn
 적용된 UI 입니다.
 ![](../assets/images/ojet-basic-table-ui.png)
 
-# 마무리
-Oracle JET 라는 프론트엔드 프레임워크와 제공되는 기본 테이블 컴포넌트를 활용해서 간단하게 웹 애플리케이션을 만들어봤습니다. 일단 Cookbook을 통해서 다양한 샘플을 제공하는데 특히 Chart는 매우 다양하고 UI도 훌륭합니다. Oracle의 모든 클라우드 서비스가 모두 이 JET로 만들어져 있고 앞으로 나올 모든 서비스가 JET 기반으로 개발이 된다고 하니, 지속적인 유지/관리뿐 아니라, UI와 기능 또한 계속해서 향상되리라 생각합니다.
+### 마무리
+Oracle JET 라는 프론트엔드 프레임워크와 제공되는 기본 테이블 컴포넌트를 활용해서 간단하게 웹 애플리케이션을 만들었습니다. 다양한 JET Cookbook을 제공하는데 특히 Chart는 종류도 다양하고 UI도 훌륭합니다. Oracle의 모든 클라우드 서비스가 모두 이 JET로 만들어져 있고 앞으로 출시되는 모든 서비스가 JET 기반으로 개발이 되고, Oracle의 모든 SaaS와 PaaS 서비스들이 모두 JET를 기반으로 Extension이 된다고 하니, Oracle 관련 프로젝트를 하는 분들에게는 필수적으로 알야야 할 프레임워크가 아닌가 생각됩니다.
