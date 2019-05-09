@@ -211,7 +211,7 @@ kramdown:
 
 # Collections
 collections:
-  oracle-cloud-infrastructure:
+  oci:
     output: true
     permalink: /:collection/:path/
   cloud:
