@@ -22,9 +22,9 @@ Public API도 비슷합니다. API를 실제 오픈한 이후에는 변경할 �
 
 API Design First는 API 디자인을 우선 진행하고, 디자인된 것을 개발 이전에 프로토타입 해보면서 API 설계자, API 개발자, 앱 개발자간의 빠른 피드백을 통해 API에 대한 퀄리티를 빠른 시간에 높여서 이를 개발에 반영하는 방법입니다.
 
-![](images/apiblueprint-understanding-api-first-design.png)
+![](../images/apiblueprint-understanding-api-first-design.png)
 
-![API Design First Process](images/apiblueprint-api-first-design-process.png "API Design First Process") 
+![API Design First Process](../images/apiblueprint-api-first-design-process.png "API Design First Process") 
 
 <center><b>API Design First Process</b></center>
 
@@ -41,14 +41,14 @@ API Design Spec 방법을 적용하기 위해서는 Design 우선이 되어야 �
 
 # API Blueprint
 
-![](images/apiblueprint-logo.png)
+![](../images/apiblueprint-logo.png)
 [API Blueprint](https://apiblueprint.org/)는 [Apiary](https://apiary.io)사에서 만든 스펙으로 현재는 Oracle에 인수되어 Oracle에 의해 관리하고 있습니다.  
 
 디자인 도구는 ATOM, Visual Studio Code, Apiary등이 있는데, 그래도 Apiary에서 만든 스펙인데, Apiary가 API Blueprint를 가장 잘 지원하는 도구라고 볼 수 있습니다.
 
 # Apiary
 
-<img src="images/apiary_logo.png" width="60%">  
+<img src="../images/apiary_logo.png" width="60%">  
 
 Apiary는 2011년에 만들어진 회사로 2017년에 Oracle에 인수 합병되었습니다. 
 Markdown 형식의 API Blueprint와 이를 지원하는 웹 기반의 디자인 도구를 제공하며, 수많은 Open API를 등록, 관리, 오픈하고 있습니다.

@@ -246,4 +246,4 @@ curl http://localhost:8000/movie/1930
 ```
 
 결과
-![](images/spring-boot-jpa-json-1.png)
+![](../images/spring-boot-jpa-json-1.png)

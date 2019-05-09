@@ -13,7 +13,7 @@ Oracle에서 개발한 오픈소스 프론트엔드 오픈소스 프레임워크
 Oracle JET은 새로운 형태의 프론트엔드 프레임워크라기 보다는 여러가지 오픈소스 라이브러리와 Oracle의 UI 컴포넌트인 Alta UI를 포함해서 만든 프론트엔드 프레임워크입니다.  
 
 Oracle JET은 다음과 같은 오픈 소스 라이브러리를 사용합니다.
-<img src="images/ojet-open-sources.png" width="60%">
+<img src="../images/ojet-open-sources.png" width="60%">
 
 JQuery는 말이 필요없는 유명한 Javascript Library입니다.  
 Apache Cordova 또한 유명한 하이브리드 모바일 개발 프레임워크입니다.
@@ -23,17 +23,17 @@ Apache Cordova 또한 유명한 하이브리드 모바일 개발 프레임워크
 
 # Knockout
 
-<img src="images/ojet-knockout-logo.png" width="60%">
+<img src="../images/ojet-knockout-logo.png" width="60%">
 
 [Knockout](https://knockoutjs.com/)은 Steve Sanderson에 의해서 개발되었으며, MIT license를 따르는 MVVM (Model-View-View Model) 패턴을 지원하는 가벼운 (66kb minified) Javascript 프레임워크로 선언적으로 쉽게 View와 Model간의 양방향 데이터 바인딩을 할 수 있도록 지원해줍니다. 이를 통해 다이나믹한 페이지 구성을 쉽게 할 수 있도록 만들어줍니다.
 
 Knockout은 View(HTML)와 View-Model(JS)가 1:1로 매핑이 되어 데이터가 바인딩 됩니다. View-Model에서는 필요에 따라 서버 사이드에서 제공되는 API를 호출하여 Model을 생성하여 이를 활용하게 됩니다. 다음은 Knockout 아키텍처 입니다.  
-<img src="images/ojet-knockout-architecture.png" width="60%">
+<img src="../images/ojet-knockout-architecture.png" width="60%">
 <center><b>Knockout Architecture</b></center>
 (참조 : [Microsoft - Knockout.js를 사용하여 동적 UI 만들기] https://docs.microsoft.com/ko-kr/aspnet/web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5)  
 
 Knockout 주요 컨셉은 다음과 같습니다.
-<img src="images/ojet-knockout-key-concepts.png" width="80%">
+<img src="../images/ojet-knockout-key-concepts.png" width="80%">
 
 * Declarative Bindings
     * 간결하고 읽기 쉬운 선언적 구문 사용으로 DOM Element와 Model Data를 쉽게 연결
@@ -57,10 +57,10 @@ Knockout과 RequireJS를 잘 알면 좋겠지만, 배우는데 시간이 많이 
 
 [Oracle JET Cookbook 바로 가기](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html)
 
-![](images/ojet-components.png)
+![](../images/ojet-components.png)
 <center><b>Oracle JET Components</b></center>
 
-![](images/ojet-basic-table-source.png)
+![](../images/ojet-basic-table-source.png)
 <center><b>Basic Table UI와 예제 소스</b></center>
 
 # Oracle JET Quickstart
@@ -192,12 +192,12 @@ Watcher: themes is ready.
 ```
 
 실행하면 다음과 같은 기본 JET UI를 볼 수 있습니다.
-![](images/ojet-basic-template-ui.png)
+![](../images/ojet-basic-template-ui.png)
 
 # JET 프로젝트에 Table Component 적용하기
 다운로드 받은 Template 구조를 보면 기본 페이지인 index.html과 js 하위에 main.js, appController.js, view와 viewModels에 각각 html 파일과 동일한 이름의 js 파일이 1:1로 매핑되어 있는 것을 볼 수 있습니다.
 
-<img src="images/ojet-project-structure.png" width="20%">
+<img src="../images/ojet-project-structure.png" width="20%">
 
 여기서는 새로운 페이지를 추가하지 않고, 기본 페이지 중에서 dashboard.html과 dashboard.js 파일에 JET Cookbook의 Basic Table Component를 추가합니다. 먼저 JET Cookbook의 Basic Component와 예제 소스를 다음 URL에서 확인합니다.  
 https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=table&demo=basicTable
@@ -271,7 +271,7 @@ function(oj, ko, $, ArrayDataProvider)
 });	
 ```
 
-다운로드 받은 JET Template의 dashboard.js 파일을 오픈하면 다음과 같은 코드를 볼 수 있습니다.  Oracle JET은 모듈 로더로 RequireJS를 사용합니다. require 혹은 define으로 모듈 로드를 합니다. 위 예제 코드에서는 require, 템플릿의 js 좀 다른 부분이 있는 위에서는 모듈 로드할 때 js 모듈 로더인 RequireJS를 사용하는데, require를 사용했는데, 아래에서는 define을 사용했습니다. requireJS에서 require와 define은 약간 다르지만, 기본적으로 모듈을 로드하는 목적으로 사용합니다. 즉, 거의 동일하게 생각하면 됩니다. 위 코드에서 require 부분인자와 동일하게 아래 코드에서도 define을 맞춰주면 됩니다.
+다운로드 받은 JET Template의 dashboard.js 파일을 오픈하면 다음과 같은 코드를 볼 수 있습니다.  Oracle JET은 모듈 로더로 RequireJS를 사용합니다. require 혹은 define으로 모듈 로드를 합니다. 위 Cookbook의 예제 코드에서는 require, 템플릿의 dashboard.js viewModel에서는 define을 사용했습니다. requireJS에서 require와 define은 약간 차이가 있지만, 기본적으로 js 모듈을 로드하는 목적은 같습니다. Cookbook 코드에서의 require 부분의 인자와 동일하게 템플릿의 dashboard.js의 define을 맞춰줍니다.
 
 ```javascript
 /**
@@ -480,7 +480,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojarraydataprovider', 'ojs/ojkn
 ```
 
 적용된 UI 입니다.
-![](images/ojet-basic-table-ui.png)
+![](../images/ojet-basic-table-ui.png)
 
 # 마무리
 Oracle JET 라는 프론트엔드 프레임워크와 제공되는 기본 테이블 컴포넌트를 활용해서 간단하게 웹 애플리케이션을 만들어봤습니다. 일단 Cookbook을 통해서 다양한 샘플을 제공하는데 특히 Chart는 매우 다양하고 UI도 훌륭합니다. Oracle의 모든 클라우드 서비스가 모두 이 JET로 만들어져 있고 앞으로 나올 모든 서비스가 JET 기반으로 개발이 된다고 하니, 지속적인 유지/관리뿐 아니라, UI와 기능 또한 계속해서 향상되리라 생각합니다.
