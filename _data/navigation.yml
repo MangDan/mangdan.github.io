@@ -1,13 +1,11 @@
 # main links
 main:
-  - title: "Cloud"
-    url: /cloud/
-  - title: "Cloud Native"
-    url: /cloud-native/
-  - title: "Frameworks"
-    url: /frameworks/
-  - title: "API"
-    url: /api/
+  - title: "Home"
+    url: /
+  - title: "Tags Archive"
+    url: /tags/
+  - title: "Year Archive"
+    url: /year-archive/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"

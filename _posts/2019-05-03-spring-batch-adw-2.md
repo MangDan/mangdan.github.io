@@ -1,6 +1,7 @@
 ---
 title:  "[Spring Boot] Spring REST Client, Batch를 사용해서 Oracle Autonomous Data Warehouse에 데이터 적재하기 - 2탄"
 date:   2019-05-03 13:45
+tags: ["Microservice", "Spring Boot", "Spring Batch", "Oracle ADW"]
 ---
 
 [Spring Boot에서 Oracle ADW 연동](archivers/spring-boot-rest-batch-adw-1)에 이어서 이번에는 Spring Batch와 REST Client를 활용해서 전국 부동산 실거래 데이터를 Open API를 통해서 수집하는 내용을 정리한 포스트입니다.
@@ -44,7 +45,7 @@ spring.batch.job.enabled=false
 Spring Batch에서는 크게 Job을 실행하기 위한 JobLauncher와 Job, 그리고 하나의 Job에서 구동되는 Step이 다수 연결됩니다. 여기에 하나의 Step을 처리하기 위해 Reader, Processor, Writer를 사용할 수 있습니다. 물론 Step에서 tasklet을 사용할 수 있지만, 여기서는 Reader, Processor, Writer를 사용했습니다.  
 동작은 JobLauncher에서 지정한 Job을 실행합니다. 해당 Job에서는 여러개의 Step을 병렬 혹은 직렬로 실행하게 됩니다. 각 Step에서는 데이터 소스(여기서는 Open API)에서 정보를 가져오는 Reader, 데이터를 Writer로 넘기기 전에 특정 작업을 할 수 있는 Processor, 마지막으로 타겟 데이터 소스(여기서는 ADW)로 저장하기 위한 Writer로 가 실행됩니다.  
 
-<img src="../assets/images/spring-boog-batch-architecture.png" width="60%">
+<img src="images/spring-boog-batch-architecture.png" width="60%">
 
 <Spring Batch Architecture - 참고 : https://dzone.com/articles/spring-batch>
 

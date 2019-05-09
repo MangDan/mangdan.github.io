@@ -1,6 +1,7 @@
 ---
 title:  "[Spring Boot] HikariCP와 JPA로 Oracle DB 연동하기 - 2탄"
 date:   2019-05-02 17:58
+tags: ["Microservice", "Spring Boot", "HikariCP", "String JPA"]
 ---
 
 이전 포스트에서는 Spring Boot에서 Oracle DB연동을 위한 Hikari Connection Pool 설정하였습니다.  
@@ -245,4 +246,4 @@ curl http://localhost:8000/movie/1930
 ```
 
 결과
-![](../assets/images/spring-boot-jpa-json-1.png)
+![](images/spring-boot-jpa-json-1.png)

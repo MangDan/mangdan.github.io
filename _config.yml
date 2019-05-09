@@ -108,9 +108,8 @@ analytics:
 author:
   name             : *name
   avatar           : "/assets/images/dan.jpg"
-  bio              : "I am a developer and solution engineer"
+  bio              : "Architecture / Solution Engineer / Developer"
   location         : "Seoul, Korea"
-  email            : dan.donghu.kim@gmail.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -126,7 +125,7 @@ author:
       url: "https://facebook.com/kairos9"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/mangdan"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"

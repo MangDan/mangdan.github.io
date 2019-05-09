@@ -1,6 +1,7 @@
 ---
 title:  "[API Blueprint] Basic"
 date:   2019-05-07 16:46
+tags: ["Apiary", "API Blueprint"]
 ---
 
 API Design Specification 중 하나인 API Blueprint의 가장 기본이 섹션들에 대해서 간단히 정리하였습니다.
@@ -191,15 +192,15 @@ Data Structures 하위에 객체를 정의합니다. 문법은 **{객체명 (obj
 ```
 
 다음과 같은 구조입니다.  
-<img src="../images/apiblueprint-mson-sample.png" width="60%">
+<img src="images/apiblueprint-mson-sample.png" width="60%">
 
 이렇게 작성된 MSON은 문서상에서 JSON으로 변환되어 출력됩니다.  
-<img src="../images/apiblueprint-mson-to-json.png" width="60%">
+<img src="images/apiblueprint-mson-to-json.png" width="60%">
 
 # API 문서
 Apiary에서 API Blueprint로 문서 작성이 되면 우측에 HTML로 실시간 문서 변환이 이뤄집니다. API 타이틀, 설명, API Resource URI, Action, Parameter, Body, Header, Mock API Url에 대한 정보와 API 가상 테스트를 해볼 수 있는 기능을 포함해서 제공이 됩니다.
 
-![](../images/apiblueprint-apidocument-sample.png)
+![](images/apiblueprint-apidocument-sample.png)
 
 # 마무리
 Swagger와 RAML도 익숙해지면 Design First가 가능하겠지만, 아무래도 마크다운 포멧인 API Blueprint가 가장 심플해 보입니다. 복잡한 API 정의가 필요치 않다면 API Blueprint 사용을 권장합니다. 물론 Swagger등과 비교해서 디테일면에서 떨어지는 부분과 또 가장 아쉬운 부분중 하나는 소스와 동기화되어야 하는 부분인데, Swagger의 경우는 소스에서 바로 문서를 뽑아낼 수 있기 때문에 (Code First라고 볼 수 있습니다) 이런 방식으로 동기화할 수 있지만, API Blueprint는 Code First 어프로치가 어렵기 때문에 이런 방식으로 동기화 할 수 없습니다.  

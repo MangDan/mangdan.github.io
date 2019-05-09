@@ -1,6 +1,7 @@
 ---
 title:  "[Spring Boot] Profiles"
 date:   2019-05-02 17:20
+tags: ["Microservice", "Spring Profile"]
 ---
 
 Spring Boot의 Profile 설정에 대해 간략하게 작성된 포스트입니다.

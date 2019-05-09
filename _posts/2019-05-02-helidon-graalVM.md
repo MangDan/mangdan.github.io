@@ -1,11 +1,12 @@
 ---
 title:  "[Helidon] Helidon SE + GraalVM"
 date:   2019-05-02 08:00
+tags: ["Microservice", "Helidon", "Oracle", "GraalVM"]
 ---
 
 [Helidon](https://helidon.io) 1.0.3 버전에서는 GraalVM의 Native Image를 정식으로 지원하게 되었습니다.  
 정확히는 현재 Helidon SE에서만 지원됩니다.  
-본 포스트에서는 Helidon SE에서 어떻게 GraalVM의 Native Image를 지원하는지 알아보겠습니다.
+이번 포스트에서는 Helidon SE에서 어떻게 GraalVM의 Native Image를 지원하는지 알아보겠습니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 

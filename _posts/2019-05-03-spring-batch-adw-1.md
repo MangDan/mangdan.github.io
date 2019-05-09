@@ -1,6 +1,7 @@
 ---
 title:  "[Spring Boot] Spring REST Client, Batch를 사용해서 Oracle Autonomous Data Warehouse에 데이터 적재하기 - 1탄"
 date:   2019-05-03 13:45
+tags: ["Microservice", "Spring Boot", "Spring Batch", "Oracle ADW"]
 ---
 
 얼마전에 Oracle Autonomous Data Warehouse에 특정 3개의 Open API (전국 부동산 실거래 정보)를 통해 가져온 데이터를 적재하는 작업을 진행했었는데 간단히 진행했던 작업들을 정리한 포스트입니다.  
