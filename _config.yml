@@ -98,9 +98,9 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : google-gtag # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          : UA-139522937-1
     anonymize_ip         : # true, false (default)
 
 
@@ -110,11 +110,11 @@ author:
   avatar           : "/assets/images/dan.jpg"
   bio              : "I am a developer and solution engineer"
   location         : "Seoul, Korea"
-  email            :
+  email            : dan.donghu.kim@gmail.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      url: mailto:dan.donghu.kim@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -123,7 +123,7 @@ author:
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "https://facebook.com/kairos9"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       # url: "https://github.com/"
