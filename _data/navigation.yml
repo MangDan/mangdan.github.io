@@ -3,7 +3,7 @@ main:
   - title: "Home"
     url: /
   - title: "Oracle Cloud Infrastructure"
-    url: /oci/
+    url: /oci/quick-start-guide/
   - title: "Tags Archive"
     url: /tags/
   # - title: "Sample Posts"
