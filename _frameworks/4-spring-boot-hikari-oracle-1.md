@@ -3,7 +3,7 @@ title:  "[Spring Boot] HikariCP와 JPA로 Oracle DB 연동하기 - 1탄"
 date:   2019-05-02 17:58
 ---
 
-Spring Boot에서 Hikari Connection Pool과 JPA를 통해 Oracle DB와 연동하는 부분을 간략히 보도록 하겠습니다.
+Spring Boot에서 Hikari Connection Pool과 JPA를 통해 Oracle DB와 연동하는 부분을 간략히 살펴보도록 하겠습니다.
 첫 번째로 Oracle DB 연동을 위한 Hikari Connection Pool 설정을 먼저 알아봅니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
