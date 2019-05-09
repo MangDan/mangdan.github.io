@@ -245,10 +245,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _oracle-cloud-infrastructure
+  # _oci
   - scope:
       path: ""
-      type: oracle-cloud-infrastructure
+      type: oci
     values:
       layout: single
       read_time: false
@@ -256,7 +256,7 @@ defaults:
       share: false
       comments: false
       sidebar:
-        nav: "oracle-cloud-infrastructure"
+        nav: "oci"
   # _cloud
   - scope:
       path: ""
