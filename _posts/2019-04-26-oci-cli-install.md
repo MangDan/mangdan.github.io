@@ -55,10 +55,10 @@ oci setup을 위해 몇가지 정보가 필요합니다.
 Oracle Cloud Console에서 본인 계정에 대한 OCID와 Tenancy OCID를 확인한 후 동일하게 입력합니다.
 
 User OCID
-![](../images/oci-user-ocid.png)
+![](../assets/images/oci-user-ocid.png)
 
 Tenancy OCID
-![](../images/oci-tenancy-ocid.png)
+![](../assets/images/oci-tenancy-ocid.png)
 
 세 번째는 OCI 사용자 계정에 OCI API를 사용하기 위한 Public Key를 입력해야 합니다.
 
@@ -66,10 +66,10 @@ ssh-keygen으로 생성합니다.
 ```
 ssh-keygen -t rsa
 ```
-![](../images/ssh-keygen2.png)
+![](../assets/images/ssh-keygen2.png)
 
 Public Key의 내용을 복사해서 OCI Console의 API Key에 Public Key를 등록합니다.
-![](../images/oci-add-public-key-for-api.png)
+![](../assets/images/oci-add-public-key-for-api.png)
 
 OCI-CLI 설치 및 환경 구성이 모두 끝났습니다.  
 다음에는 oci-cli를 활용해서 Oracle Object Storage에 파일을 업로드 하는 부분에 대해서 포스팅 하도록 하겠습니다.

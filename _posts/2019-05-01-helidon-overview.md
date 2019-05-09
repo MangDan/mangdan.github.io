@@ -17,13 +17,13 @@ Helidon은 Eclipse Microprofile 스펙을 구현한 Helidon MP와, Reactive 방�
 
 > 참고로 Helidon은 그리스어로 **제비**라는 뜻을 가지고 있습니다. **제비**는 작고 빠르며, 효율적으로 비행하는 새들 중 하나입니다. 마이크로 서비스 개발을 위한 프레임워크로써 적절하게 표현하는 이름인 것 같습니다.
 
-<img src="../images/microprofile.png" width="40%">
+<img src="../assets/images/microprofile.png" width="40%">
 
 MicroProfile은 Eclipse Foundation에서 2016년에 발표한 Microservice 개발을 위한 JavaEE 기반의 마이크로 서비스 개발 스펙으로, 2016년 9월에 최소한의 REST 구현을 위한 컴포넌트(CDI, JSON-P, JAX-RS)를 가지고 1.0이 발표되었습니다. 2018년 6월에 2.0이 정식 릴리즈되었으며, JSON-B 1.0이 포함되면서 총 12개의 컴포넌트를 제공하게 되었습니다.  
 2019년 2월에 2.2 버전이 나왔는데 2.2버전에서는 새로 추가된 내용은 없지만, Open Tracing, Open API, REST Client, Fault Tolerance가 업데이트되었습니다.  
 Helidon MP(Microprofile)는 이 Microprofile에 대한 구현체로 현재 Microprofile 2.2의 Open Tracing 1.3 까지만 지원합니다. (Open API 1.1, REST Client 1.2, Config 1.3 은 조만간 지원된다고 하네요.)
 
-<img src="../images/microprofile-2.2-spec.png" width="80%">
+<img src="../assets/images/microprofile-2.2-spec.png" width="80%">
 
 Reactive Programming은 논블록킹, 비동기 애플리케이션을 개발할 수 있는 함수형 프로그래밍 방식입니다. Helidon SE는 JVM상에서 Reactive 방식의 애플리케이션을 개발, 실행할 수 있는 마이크로 서비스 개발 프레임워크입니다. 비슷한 프레임워크으로는 Spring Reactor, Micronaut, javalin 등이 있습니다. Nodejs, RxJava도 마찬가지 입니다.
 
@@ -33,7 +33,7 @@ Helidon은 다음과 같이 기본 Helidon SE에 Helidon MP가 구현된 형태�
 Cloud Integration 부분은 Oracle에서 제공하는 여러 Cloud Service와 통합하기 위해 CDI 형태로 기능을
 포함하여 제공되는 부분입니다. 현재는 Object Storage만 정식으로 지원하고 있지만, 향후 IDCS등과 통합될 예정이라고 합니다. Helidon SE, MP 둘 다 Cloud Integration 기능을 사용할 수 있습니다.
 
-<img src="../images/helidon-architecture.png" width="80%">
+<img src="../assets/images/helidon-architecture.png" width="80%">
 
 Helidon에서 제공하는 컴포넌트들입니다.  MicroProfile은 위에서 언급했다시피 Open API 1.1, REST Client 1.2, Config 1.3을 제외하고 지원합니다. 몇가지 중요한 부분만 정리하겠습니다.
 * MicroProfile은 기본적으로 Metrics, Health, Tracing 기능을 포함하기 때문에, Helidon MP의 경우 별도의 설정 없이도, 위 기능이 활성화 됩니다.  
@@ -44,7 +44,7 @@ Helidon에서 제공하는 컴포넌트들입니다.  MicroProfile은 위에서 
 * WebServer는 Helidon SE에서 라이팅, 비동기 기능 구현을 위해 제공되는 부분이고, Security는 JWT, OAuth, Basic Auth, Google Auth, Oracle IDCS등을 사용할 수 있도록 기능을 제공합니다.
 * Helidon은 MP의 경우 기본적으로 MicroProfile 스타일의 Config 설정을 지원하지만, Helidon 만의 Config 기능도 제공합니다. 파일 형식은 properties, yaml, json, hocon (simple json) 4가지 형식을 기본 지원하며, 런타임 로딩, 오버라이드등 여러가지 기능을 포함하고 있습니다. 
 
-<img src="../images/helidon-components.png" width="80%">
+<img src="../assets/images/helidon-components.png" width="80%">
 
 ## Helidon Hello World
 
