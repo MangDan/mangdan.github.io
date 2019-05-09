@@ -37,7 +37,7 @@
               {% assign active = "" %}
             {% endif %}
 
-            <li><a href="{{ child_url }}" class="{{ active }}">{{ child.title }}</a></li>
+            <li><a href="{{ child_url }}" class="{{ active }}" style="font-size:15px">{{ child.title }}</a></li>
           {% endfor %}
         </ul>
         {% endif %}

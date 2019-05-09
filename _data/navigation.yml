@@ -8,6 +8,8 @@ main:
     url: /oci/emerging-technology/
   - title: "Tags Archive"
     url: /tags/
+  - title: "About"
+    url: /about/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
@@ -17,7 +19,7 @@ main:
 
 # documentation links
 oci:
-  - title: Oracle Cloud Infrastructure
+  - title: Infrastructure
     children:
       - title: "OCI Overview"
         url: /oci/oci-overview/
