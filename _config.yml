@@ -106,9 +106,9 @@ analytics:
 
 # Site Author
 author:
-  name             : *name
-  avatar           : "/assets/images/dan.jpg"
-  bio              : "Architecture / Solution Engineer / Developer"
+  name             : Dan Kim
+  avatar           : "/assets/images/dan3.jpg"
+  bio              : "Developer / Architecture / Solution Engineer / Sales Consultant"
   location         : "Seoul, Korea"
   links:
     - label: "Email"
