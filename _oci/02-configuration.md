@@ -200,8 +200,6 @@ head_scripts:
   - /assets/js/your-custom-head-script.js
 ```
 
-Consult the [JavaScript documentation]({{ site.baseurl }}{% link _docs/17-javascript.md %}) for more information on working with theme scripts.
-{: .notice--info}
 
 ### Site default teaser image
 
