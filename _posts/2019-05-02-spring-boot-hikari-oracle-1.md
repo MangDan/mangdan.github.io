@@ -9,7 +9,7 @@ Spring Boot에서 Hikari Connection Pool과 JPA를 통해 Oracle DB와 연동하
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
-# Dependency 추가
+### Dependency 추가
 
 먼저 HikariCP와 Spring JPA를 사용하기 위해 다음과 같이 pom.xml에 Dependency를 추가합니다.
 
@@ -44,7 +44,7 @@ Oracle JDBC Driver 11.2.0.3 Dependency 추가
 </dependency>
 ```
 
-# Oracle Profile
+### Oracle Profile
 oracle 이라는 profile을 가지는 설정파일을 별도로 구성했습니다. 파일 내용은 다음과 같습니다.
 
 application-oracle.properties

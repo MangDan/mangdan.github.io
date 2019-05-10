@@ -8,14 +8,14 @@ API Design Specification 중 하나인 API Blueprint의 가장 기본이 섹션�
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
-# API Name and metadata
+### API Name and metadata
 
 
 ```markdown
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# 영화 API
+### 영화 API
 
 최근 인기있는 **영화 정보**와 관련 **영화인**에 대한 정보를 제공하는 API
 ```
@@ -24,7 +24,7 @@ HOST: http://polls.apiblueprint.org/
 * **HOST** - 실제 제공할 API의 Host입니다. 개발 전이라면 아직 Host가 없을 수 있기 때문에 기본 혹은 임의로 작성합니다. Production URL이 생기면 업데이트 합니다.
 * **# {제목}** - 문서의 가장 큰 제목입니다. API 리소스들을 대표하는 이름으로 부여합니다.
 
-# Resource Groups
+### Resource Groups
 
 ```markdown
  # Group 영화 API
@@ -34,7 +34,7 @@ HOST: http://polls.apiblueprint.org/
 
 * **# Group {그룹명}** - API Resource들을 그룹으로 나눌 수 있습니다. 예제에서는 영화 정보와 영화인 정보 제공으로 그룹핑하였습니다.
 
-# Resource
+### Resource
 
 ```markdown
 ## 영화 정보 리소스 [/api/search/v1/movies]
@@ -42,7 +42,7 @@ HOST: http://polls.apiblueprint.org/
 
 * **## {리소스명} [리소스 URI]** - 각 API에 대한 대표 리소스를 표현합니다.
 
-# Actions
+### Actions
 
 ```markdown
 ### 영화 조회 [GET /api/search/v1/movies{?title}]
@@ -56,7 +56,7 @@ HOST: http://polls.apiblueprint.org/
 * **### {액션명} [액션 {Resource URI}/{?param1,param2}]** - Query Parameter를 지정할 경우 위 Resource에서 지정한 URI에 {?param1, param2}와 같이 지정해줍니다.
 * **### {액션명} [액션 {Resource URI}/{param1}** - URI Path Parameter를 지정할 경우 위 Resource에서 지정한 URI에 {param1}과 같이 지정해줍니다.
 
-# Request > Parameters
+### Request > Parameters
 
 ```markdown
 + Request
@@ -67,7 +67,7 @@ HOST: http://polls.apiblueprint.org/
 * Action이 GET일 경우 **+ Request** 하위에 **+ Parameters**를 입력하고 속성을 파라미터 정의합니다.
 * 파라미터 속성은 **+ {속성명} : {기본값} ({타입}, {필수여부}) - {설명}**과 같이 정의합니다. 여기서 속성명을 제외한 나머지는 옵셔널입니다.
 
-# Request > Headers/Body
+### Request > Headers/Body
 
 ```markdown
 + Request (application/json)
@@ -86,7 +86,7 @@ HOST: http://polls.apiblueprint.org/
 
 > **+ Request** 다음 **+ Header** 가 한 줄 띄워서 작성되어 있습니다. API Blueprint에서의 기본 마크다운 스타일 규칙입니다. 이와 같이 기본 스타일에 맞춰서 들여쓰기와 띄워쓰기를 하는데, 꼭 이렇게 해야하는 것은 아니고 권장하는 스타일입니다. Apiary에서는 권장하는 스타일로 작성이 안된 부분은 Warning 메세지를 보여줍니다. 단순히 Warning이기 때문에 문서로 변환이 안되는 것은 아닙니다. 이러한 스타일은 문서의 가독성을 높이기 위해 권장 하는 부분으로, 유료 버전일 경우 (Standard, Enterprise) 스타일 규칙을 추가, 편집할 수 있습니다.
 
-# Response > Headers/Body
+### Response > Headers/Body
 
 ```markdown
 + Response 200 (application/json)
@@ -111,7 +111,7 @@ HOST: http://polls.apiblueprint.org/
 * Response도 Request와 거의 비슷하지만, 응답에 대한 HTTP 코드를 정의해줘야 합니다.
 * Headers와 Body는 Request와 동일합니다.
 
-# Response Without a Body
+### Response Without a Body
 
 ```markdown
 ### 영화인 삭제 [DELETE]
@@ -121,7 +121,7 @@ HOST: http://polls.apiblueprint.org/
 
 * Response 중에서 응답 Body가 없는 경우는 위와 같이 간단하게 작성합니ㅏㄷ. HTTP 204 코드는 컨텐츠가 없는 성공 코드 입니다.
 
-# MSON (Markdown Syntax for Object Notation)
+### MSON (Markdown Syntax for Object Notation)
 
 [MSON (Markdown Syntax for Object Notation)](https://apiblueprint.org/documentation/mson/specification.html)은 Request 혹은 Response의 Body의 JSON Structure를 쉽게 표현하기 위한 API Blueprint 스펙입니다. JSON보다 더 간결하고 읽기 쉬우며, 객체화가 가능하여 문서내에서 쉽게 재활용할 수 있습니다.
 
@@ -202,7 +202,7 @@ Apiary에서 API Blueprint로 문서 작성이 되면 우측에 HTML로 실시�
 
 ![](../assets/images/apiblueprint-apidocument-sample.png)
 
-# 마무리
+### 마무리
 Swagger와 RAML도 익숙해지면 Design First가 가능하겠지만, 아무래도 마크다운 포멧인 API Blueprint가 가장 심플해 보입니다. 복잡한 API 정의가 필요치 않다면 API Blueprint 사용을 권장합니다. 물론 Swagger등과 비교해서 디테일면에서 떨어지는 부분과 또 가장 아쉬운 부분중 하나는 소스와 동기화되어야 하는 부분인데, Swagger의 경우는 소스에서 바로 문서를 뽑아낼 수 있기 때문에 (Code First라고 볼 수 있습니다) 이런 방식으로 동기화할 수 있지만, API Blueprint는 Code First 어프로치가 어렵기 때문에 이런 방식으로 동기화 할 수 없습니다.  
 이 부분을 보완할 수 있는 툴이 Apiary에서 개발한 오픈소스 API 문서 검증 툴인 [Dredd](https://dredd.org/en/latest/)를 활용하여 어느정도 커버 가능합니다. Dredd는 소스레벨이 아닌 실행 레벨에서 문서와 서비스간 일치 여부를 검증하는 툴이라고 볼 수 있습니다. Dredd를 통한 문서 검증 테스트 부분은 추후 포스트하도록 하겠습니다.
 

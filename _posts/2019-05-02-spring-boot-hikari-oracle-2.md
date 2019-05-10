@@ -9,7 +9,7 @@ tags: ["Microservice", "Spring Boot", "HikariCP", "String JPA"]
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
-# Table 생성
+### Table 생성
 
 먼저 Oracle DB에 테이블을 하나 생성합니다.
 ```sql

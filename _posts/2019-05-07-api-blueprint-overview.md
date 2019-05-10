@@ -8,7 +8,7 @@ API Design Specification 중 하나인 API Blueprint에 대한 간략한 소개�
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
-# How to Design a Good API and Why it Matters
+### How to Design a Good API and Why it Matters
 
 미국의 유명한 소프트웨어 아키텍처이자 Effective Java의 저자이신 **조슈아 블로치**가 Google Tech Talks에서 API Design에 대한 중요성에 대해서 위 타이틀로 발표한 내용 중 한 부분입니다.
 
@@ -18,7 +18,7 @@ API Design Specification 중 하나인 API Blueprint에 대한 간략한 소개�
 
 Public API도 비슷합니다. API를 실제 오픈한 이후에는 변경할 경우 API를 사용하고 있는 많은 애플리케이션이 영향을 받습니다. 따라서 실제 오픈전에 개발이 잘 되어야 하고, 개발이 잘 되려면 설계가 튼실해야 합니다.
 
-# API Design First
+### API Design First
 
 API Design First는 API 디자인을 우선 진행하고, 디자인된 것을 개발 이전에 프로토타입 해보면서 API 설계자, API 개발자, 앱 개발자간의 빠른 피드백을 통해 API에 대한 퀄리티를 빠른 시간에 높여서 이를 개발에 반영하는 방법입니다.
 
@@ -29,7 +29,7 @@ API Design First는 API 디자인을 우선 진행하고, 디자인된 것을 �
 <center><b>API Design First Process</b></center>
 
 
-# API Specification
+### API Specification
 
 API 설계 스펙은 여러가지가 있습니다. 이 중에서 가장 유명한 것이 **Swagger**이며, 그외 **Apiary**사의 **API Blueprint** (오라클에 인수됨), **MuleSoft**의 **RAML**이 있고, **Spring**의 경우는 **AsciiDoctor**를 **Spring REST Doc**에서 사용합니다.
 
@@ -39,14 +39,14 @@ Swagger는 JSON/YAML 포멧을 지원하고, RAML은 YAML, API Blueprint는 Mark
 
 API Design Spec 방법을 적용하기 위해서는 Design 우선이 되어야 하기 때문에, 쉽게 작성할 수 있는 표준이 좋습니다. 여기서는 API Design First를 위한 Spec으로 API Blueprint를 중심으로 소개합니다.
 
-# API Blueprint
+### API Blueprint
 
 ![](../assets/images/apiblueprint-logo.png)
 [API Blueprint](https://apiblueprint.org/)는 [Apiary](https://apiary.io)사에서 만든 스펙으로 현재는 Oracle에 인수되어 Oracle에 의해 관리하고 있습니다.  
 
 디자인 도구는 ATOM, Visual Studio Code, Apiary등이 있는데, 그래도 Apiary에서 만든 스펙인데, Apiary가 API Blueprint를 가장 잘 지원하는 도구라고 볼 수 있습니다.
 
-# Apiary
+### Apiary
 
 <img src="../assets/images/apiary_logo.png" width="60%">  
 

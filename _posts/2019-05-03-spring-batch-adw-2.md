@@ -8,7 +8,7 @@ tags: ["Microservice", "Spring Boot", "Spring Batch", "Oracle ADW"]
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
-# 오픈 API
+### 오픈 API
 오픈 API는 국토교통부에서 제공하는 Open API를 활용했습니다. 공공 데이터 포털에서도 제공합니다.
 공공 데이터 포털에 로그인 한 후에 API 사용을 위한 service key를 발급받으면, 개발 환경에서 일 1,000번의 트랜잭션까지 사용 가능합니다.
 ```
@@ -28,10 +28,10 @@ open.api.public.data.housetrade.url=http://openapi.molit.go.kr:8081/OpenAPI_Tool
 open.api.public.data.mentiontrade.url=http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcRHTrade
 ```
 
-# 배치 시나리오
+### 배치 시나리오
 시나리오는 3개의 Open API를 병렬로 호출해서 가져온 JSON 데이터를 Oracle ADW에 있는 3개의 테이블에 적재하는 내용의 시나리오 입니다.
 
-# Spring Batch Config
+### Spring Batch Config
 여러가지 설정 옵션이 있겠지만, 여기서는 application.properties에 두가지 부분만 설정했습니다.  
 initialize-schema는 always로 할 경우 연결된 DB에 Batch job 이력을 저장할 테이블이 없을 경우 자동으로 생성하게 됩니다.  
 job.enabled 는 true일 경우 서버 기동 시 Job이 실행되는데, 여기서는 REST 서비스로 노출해서 외부에서 실행되도록 개발할 예정이라 false로 설정했습니다.
@@ -41,7 +41,7 @@ spring.batch.initialize-schema=always
 spring.batch.job.enabled=false
 ```
 
-# Spring Batch 구성
+### Spring Batch 구성
 Spring Batch에서는 크게 Job을 실행하기 위한 JobLauncher와 Job, 그리고 하나의 Job에서 구동되는 Step이 다수 연결됩니다. 여기에 하나의 Step을 처리하기 위해 Reader, Processor, Writer를 사용할 수 있습니다. 물론 Step에서 tasklet을 사용할 수 있지만, 여기서는 Reader, Processor, Writer를 사용했습니다.  
 동작은 JobLauncher에서 지정한 Job을 실행합니다. 해당 Job에서는 여러개의 Step을 병렬 혹은 직렬로 실행하게 됩니다. 각 Step에서는 데이터 소스(여기서는 Open API)에서 정보를 가져오는 Reader, 데이터를 Writer로 넘기기 전에 특정 작업을 할 수 있는 Processor, 마지막으로 타겟 데이터 소스(여기서는 ADW)로 저장하기 위한 Writer로 가 실행됩니다.  
 
@@ -49,13 +49,13 @@ Spring Batch에서는 크게 Job을 실행하기 위한 JobLauncher와 Job, 그�
 
 <Spring Batch Architecture - 참고 : https://dzone.com/articles/spring-batch>
 
-# Spring Batch 구성
+### Spring Batch 구성
 우선 Spring REST Client를 통해서 3개의 Open API를 호출하여 데이터를 가져오는 Reader를 3개 생성합니다. 3개의 Reader가 가져오는 데이터와 호출하는 Open API만 다르기 때문에 아파트에 대한 실거래 정보를 가져오는 부분만 설명합니다. 아래는 아파트 실거래 정보를 가져오는 Reader에 대한 전체 코드입니다. ItemReader를 구현했습니다.  
 
 > Reader, Processor, Writer는 기본은 애플리케이션 영역에서 Singleton입니다.  
 하지만, Step 단위로 인스턴스화 할 수 있는데 @StepScope를 사용하면 가능합니다.  
 
-## Spring Batch Reader
+#### Spring Batch Reader
 > 사실 Reader에서 StepScope를 사용 했는데, 뒤에 보면 알겠지만, Step을 정의하는 부분에 Chunk 사이즈를 1로 지정했습니다. Chunk 사이즈가 1 이상이라면 Step내의 Reader, Processor, Writer가 해당 Chunk 사이즈 단위로 트랜잭션이 일어나는데, 만약 StepScope를 지정하지 않은 상태라면 모든 Reader, Processor, Writer가 애플리케이션 레벨에서 Singleton으로 동작하면서 각 멤버의 데이터를 침해해 꼬이는 현상이 발생하더군요. 따라서, @StepScope를 주게되면 각각이 Step 단위로 인스턴스화되기 때문에 이런 현상이 사라집니다. 물론 @StepScope를 사용하지 않고 Chunk 사이즈를 1로 해도 이슈가 사라집니다. 여기서는 Chunk 사이즈도 1이고 @StepScope도 설정했는데, 이 경우는 어차피 하나의 Step 관련 인스턴스만 생성되기 때문에 Singleton으로 동작하는 것과 동일합니다. 
 
 > addressSiGuJpaRepository가 있습니다. 제공되는 Open API는 법정동 코드가 필요한데요. 이 코드는 현재 [행정표준코드관리시스템](https://www.code.go.kr/stdcode/regCodeL.do)에서 파일 형태로 제공하고 있습니다. 이 데이터를 DB화 해서 전국 법정동 코드를 조회하는 역할을 addressSiGuJpaRepository가 합니다.
@@ -225,7 +225,7 @@ public class RESTRealEstateAptTradeReader implements ItemReader<List<AptTradeDTO
 }
 ```
 
-## Spring Batch Processor
+#### Spring Batch Processor
 Reader에서는 Processor로 우선 데이터를 넘기게 됩니다. Processor를 사용한 이유는 REST로 가져온 데이터를 DTO (Data Transfer Object)에 담는데, 이 데이터를 ADW에 입력하기 위해 Entity에 담기 위해서입니다. Entity에 담는 과정에서 JSON에 없는 몇가지 데이터(계약월,주택유형)도 추가했습니다. 
 ```java
 package com.oracle.adw.batch.RealEstateTrade.processor;
@@ -281,7 +281,7 @@ public class RESTRealEstateAptTradeProcessor implements ItemProcessor<List<AptTr
 }
 ```
 
-## Spring Batch Writer
+#### Spring Batch Writer
 다음은 Writer입니다. Processor에서 넘긴 Entity 리스트를 전달 받아서 서비스로 전달하고, 서비스에서는 Repository로 이를 전달해서 입력하도록 구성했습니다.  
 사실 여기서 직접 Repository를 호출해보려고 했는데 잘 안되더군요. Repository가 Writer에서 주입 (Autowired) 안되는 이유는... 모르겠습니다. 원래 안되는 것인지...
 
@@ -319,7 +319,7 @@ public class RESTRealEstateAptTradeWriter implements ItemWriter<List<Estate_Real
 }
 ```
 
-## Entity
+#### Entity
 DB 컬럼은 한글입니다. Open API로 가져온 JSON의 키들이 모두 한글이라 일부러 동일하게 맞춰서 작업했습니다.  
 @IdClass를 사용해서 임의로 PK 설정했습니다. 키 클래스는 Estate_Real_Apt_Trx 입니다.
 
@@ -553,7 +553,7 @@ public class Estate_Real_Apt_Trx implements Serializable {
 }
 ```
 
-## Entity Key
+#### Entity Key
 ```java
 package com.oracle.adw.repository.entity;
 
@@ -568,7 +568,7 @@ public class Estate_Real_Apt_Trx_Keys implements Serializable{
 }
 ```
 
-## Repository
+#### Repository
 레파지토리 입니다. JpaRepository의 Generic은 위에서 작성된 Entity Class와 Entity Key Class입니다.
 ```java
 package com.oracle.adw.repository.jpa;
@@ -589,7 +589,7 @@ public interface EstateRealTrxAptRepository extends JpaRepository<Estate_Real_Ap
 }
 ```
 
-## Service Interface
+#### Service Interface
 ```java
 package com.oracle.adw.service.jpa;
 
@@ -609,7 +609,7 @@ public interface RealEstateTradeService {
  }
 ```
 
-## Service Implementation
+#### Service Implementation
 ```java
 package com.oracle.adw.service.jpa.impl;
 
@@ -669,7 +669,7 @@ public class RealEstateTradeServiceImpl implements RealEstateTradeService {
  }
 ```
 
-## Controller
+#### Controller
 Job 실행을 외부에서 콘트롤 하기 위해 REST 서비스로 노출했습니다.
 REST로 호출하기 때문에 JobLauncher를 비동기로 실행하기 위해 SimpleAsyncTaskExecutor를 사용했습니다.  
 REST URI는 /adw/1.0/aptTrade/{operation} 입니다. operation은 startjob, stopjob이며, job은 동시에 두개 이상 실행되지 못하도록 돌고 있는 job이 있는지 여부를 체크합니다.
@@ -834,7 +834,7 @@ public class RealEstateTradeScheduleController {
 }
 ```
 
-## Job Parameter
+#### Job Parameter
 위 startJob 메소드안에서 SimpleJobLauncher에 의해서 실행되는 Job은 realEstateTradeJob이라는 점을 알수 있고, JobParameter를 구성해서 SimpleJobLauncher로 전달이 되는 것을 알 수 있습니다.
 ```java
 JobParameters jobParameters = new JobParametersBuilder()
@@ -850,7 +850,7 @@ JobParameters jobParameters = new JobParametersBuilder()
 private String month;
 ```
 
-## Job 실행
+#### Job 실행
 위에서 지정한 job인 realEstateTradeJob이라는 이름의 Bean을 실행합니다. 이 Bean과 Job, Step을 실행하는 JobConfig를 작성합니다. Spring Batch를 활성화 하기 위해서 @EnableBatchProcessing 를 추가합니다.  
 실행할 Job의 Bean 이름은 @Bean(name = "realEstateTradeJob") 형태로 설정합니다.  
 3개의 Open API 데이터 처리를 위해 다음과 같이 3개의 Step을 정의했으며, Job에서 Flow로 병렬로 실행되도록 했습니다. 
@@ -1077,7 +1077,7 @@ public class BatchJobConfig {
 }
 ```
 
-# 끝내고...
+### 끝내고...
 Spring Batch를 처음 사용해봤는데, 내부 아키텍처를 잘 이해하지를 못해서 그런지 오류나 이상 동작등을 바로 잡는것이 무척 힘들었네요... 후에 기회가 되면 내부 기본 구조부터 찬찬히 살펴봐야 할 것 같습니다.
 어렵긴 하지만 여하튼 Spring은 정말 넘사벽 프레임워크인 것 같습니다.
 

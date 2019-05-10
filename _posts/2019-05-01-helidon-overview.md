@@ -5,17 +5,18 @@ tags: ["Microservice", "Helidon", "Oracle"]
 ---
 
 [Helidon](https://helidon.io)은 Eclispe의 [Microprofile](https://microprofile.io)과 Reactive Programming을 지원하기 위해 오라클에서 개발한 마이크로서비스 개발 프레임워크입니다.  
-이번 포스트에서는 간단히 Helidon이 무엇이고, 어떻게 시작하는지 살펴보겠습니다.
+이번 포스트에서는 간단히 Helidon이 무엇이고, 어떻게 시작할 수 있는지 간단히 살펴보겠습니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
-# Helidon Overview
+### Helidon Overview
 
 Helidon은 오라클에서 개발한 마이크로서비스 개발을 돕기위한 오픈소스 프레임워크입니다. 
 [Helidon 홈페이지](https://helidon.io)와 [Helidon GitHub](https://github.com/oracle/helidon)에서 관련 정보를 얻으실 수 있습니다.  
 Helidon은 Eclipse Microprofile 스펙을 구현한 Helidon MP와, Reactive 방식을 지원하는 Helidon SE 두가지 방식의 프레임워크를 제공합니다.
 
-> 참고로 Helidon은 그리스어로 **제비**라는 뜻을 가지고 있습니다. **제비**는 작고 빠르며, 효율적으로 비행하는 새들 중 하나입니다. 마이크로 서비스 개발을 위한 프레임워크로써 적절하게 표현하는 이름인 것 같습니다.
+> 참고로 Helidon은 그리스어로 **제비**라는 뜻을 가지고 있습니다. **제비**는 작고 빠르며, 효율적으로 비행하는 새들 중 하나입니다.  
+클라우드 환경에서 가볍고 빠르게 동작해야 하는 마이크로 서비스를 위한 개발 프레임워크로써 적절한 이름이 아닌가 생각됩니다.
 
 <img src="../assets/images/microprofile.png" width="40%">
 
@@ -46,7 +47,7 @@ Helidon에서 제공하는 컴포넌트들입니다.  MicroProfile은 위에서 
 
 <img src="../assets/images/helidon-components.png" width="80%">
 
-## Helidon Hello World
+#### Helidon Hello World
 
 Helidon SE와 Helidon MP의 기본 코딩 스타일을 보겠습니다.  
 SE는 함수형 프로그래밍 방식이며, MP는 선언형 프로그래밍 방식입니다. JavaEE에 익숙한 개발자분들은 Helidon MP를 선호할 것 같고, Nodejs나 RxJava, Micronaut와 같은 기술에 더 익숙하신 분들은 Helidon SE의 코딩 방식을 더 선호할 것으로 보입니다.
@@ -73,7 +74,7 @@ public class HelloWorld {
 }
 ```
 
-## Quickstart
+#### Quickstart
 Helidon은 Maven generate를 통해서 기본 Helidon Project를 구성할 수 있습니다. (Spring initializr 와 비슷)  
 아래 DarchetypeVersion은 상시로 바뀌기 때문에 버전이 올라가서 Generate 실패가 발생할 수 있는데 이 경우 [Helidon 공식 홈페이지](https://helidon.io) 를 참조하세요.  
 

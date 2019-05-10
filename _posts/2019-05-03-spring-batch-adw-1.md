@@ -16,7 +16,7 @@ tags: ["Microservice", "Spring Boot", "Spring Batch", "Oracle ADW"]
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
-# Oracle Autonomous Data Warehouse Wallet 
+### Oracle Autonomous Data Warehouse Wallet 
 Oracle Autonomous Data Warehouse(이하 ADW)와 연동은 jks 와 wallet 두가지 방식이 있는데, 여기서는 wallet을 통해 연동하는 방법으로 진행했습니다.  
 Oracle ADW wallet은 Oracle Cloud에서 ADW 인스턴스 생성 후 다운로드 받을 수 있습니다.  
 
@@ -25,7 +25,7 @@ Oracle ADW wallet은 Oracle Cloud에서 ADW 인스턴스 생성 후 다운로드
 
 **다운로드 받은 zip 형태의 wallet 파일을 특정 경로에 압축 해제합니다.**
 
-# Dependency 추가
+### Dependency 추가
 Oracle Autonomous Data Warehouse(이하 ADW)와 JDBC 연동을 위해서는 다음 5개의 Oracle Library가 필요합니다.  
 * ojdbc8
 * ucp
@@ -131,7 +131,7 @@ WEB, JSON, REST, JPA, Hikari 관련 Dependency를 추가하고 위 5개의 라�
 </dependencies>
 ```
 
-# Oracle ADW Spring Profile
+### Oracle ADW Spring Profile
 Oracle ADW 연동을 위한 별도의 Profile을 생성했습니다.  
 설정을 위해서 wallet 파일을 압축해제한 경로와 wallet안에 있는 tnsnames.ora의 TNS Alias가 필요합니다.  
 필자의 경우 다음과 같이 되어 있네요.  
