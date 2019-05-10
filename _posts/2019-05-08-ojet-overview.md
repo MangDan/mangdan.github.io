@@ -4,7 +4,7 @@ date:   2019-05-08 13:25
 tags: ["Oracle", "Javascript", "Frontend Framework"]
 ---
 
-Oracle에서 개발한 오픈소스 프론트엔드 오픈소스 프레임워크인 JET(Javascript Extension Toolkit) 에 대해 간단하게 소개합니다.
+Oracle에서 개발한 오픈소스 프론트엔드 프레임워크인 JET(Javascript Extension Toolkit) 에 대해 간단하게 소개합니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
