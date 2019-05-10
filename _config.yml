@@ -210,7 +210,7 @@ kramdown:
 
 # Collections
 collections:
-  oci:
+  ilbangbang:
     output: true
     permalink: /:collection/:path/
   cloud:
@@ -244,10 +244,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _oci
+  # _ilbangbang
   - scope:
       path: ""
-      type: oci
+      type: ilbangbang
     values:
       layout: single
       read_time: false
@@ -255,7 +255,7 @@ defaults:
       share: false
       comments: false
       sidebar:
-        nav: "oci"
+        nav: "ilbangbang"
   # _cloud
   - scope:
       path: ""

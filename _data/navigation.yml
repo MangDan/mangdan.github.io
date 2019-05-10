@@ -2,10 +2,8 @@
 main:
   - title: "Posts"
     url: /
-  - title: "Oracle Cloud"
-    url: /oci/oci-overview/
-  - title: "Emerging Technology"
-    url: /oci/emerging-technology/
+  - title: "Let's Ilbangbang"
+    url: /ilbangbang/1-i-wanna/
   - title: "Tags Archive"
     url: /tags/
   - title: "About"
@@ -18,12 +16,8 @@ main:
   #   url: /sitemap/
 
 # documentation links
-oci:
-  - title: Infrastructure
+ilbangbang:
+  - title: Let's Ilbangbang
     children:
-      - title: "OCI Overview"
-        url: /oci/oci-overview/
-  - title: Integration Cloud
-    children:
-      - title: "Adapters"
-        url: /oci/integration/adapters/
+      - title: "1. I wanna"
+        url: /ilbangbang/1-i-wanna/
