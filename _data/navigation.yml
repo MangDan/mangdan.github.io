@@ -17,7 +17,22 @@ main:
 
 # documentation links
 ilbangbang:
-  - title: Let's Ilbangbang
+  - title: English conversation
     children:
       - title: "1. I wanna"
-        url: /ilbangbang/1-i-wanna/
+        url: /ilbangbang/conversation/1/
+    children:
+      - title: "2. I want you to"
+        url: /ilbangbang/conversation/2/
+    children:
+      - title: "3강 - Do you want me to"
+        url: /ilbangbang/conversation/3/
+    children:
+      - title: "4강 - I just wanted to"
+        url: /ilbangbang/conversation/4/
+    children:
+      - title: "5강 - I just wanted to let you"
+        url: /ilbangbang/conversation/5/
+    children:
+      - title: "6강 - What do you wanna"
+        url: /ilbangbang/conversation/6/
