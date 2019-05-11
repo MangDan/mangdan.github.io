@@ -4,7 +4,7 @@ date:   2019-05-08 13:25
 tags: ["Oracle Cloud", "Cloud Native", "Kubernetes"]
 ---
 
-이번 시간에는 OCI (Oracle Cloud Infrastructure) Kubernetes Container Engine의 Cluster 생성과 kubeconfig 구성을 간단히 살펴보도록 하겠습니다.
+OCI (Oracle Cloud Infrastructure) Kubernetes Container Engine의 Cluster 생성과 kubeconfig 구성을 간단히 살펴보도록 하겠습니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 

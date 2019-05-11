@@ -4,7 +4,7 @@ date:   2019-05-03 13:45
 tags: ["Microservice", "Spring Boot", "Spring Batch", "Oracle ADW"]
 ---
 
-[Spring Boot에서 Oracle ADW 연동](archivers/spring-boot-rest-batch-adw-1)에 이어서 이번에는 Spring Batch와 REST Client를 활용해서 전국 부동산 실거래 데이터를 Open API를 통해서 수집하는 내용을 정리한 포스트입니다.
+[Spring Boot에서 Oracle ADW 연동](archivers/spring-boot-rest-batch-adw-1)에 이어서 이번에는 Spring Batch와 REST Client를 활용해서 전국 부동산 실거래 데이터를 Open API를 통해서 수집하는 내용을 정리해봤습니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 

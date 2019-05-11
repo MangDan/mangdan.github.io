@@ -4,7 +4,7 @@ date:   2019-05-02 17:20
 tags: ["Microservice", "Spring Profile"]
 ---
 
-Spring Boot의 Profile 설정에 대해 간략하게 작성된 포스트입니다.
+Spring Boot의 Profile 설정을 간략하게 살펴보겠습니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 

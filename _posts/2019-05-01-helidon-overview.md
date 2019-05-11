@@ -5,7 +5,7 @@ tags: ["Microservice", "Helidon", "Oracle"]
 ---
 
 [Helidon](https://helidon.io)은 Eclispe의 [Microprofile](https://microprofile.io)과 Reactive Programming을 지원하기 위해 오라클에서 개발한 마이크로서비스 개발 프레임워크입니다.  
-이번 포스트에서는 간단히 Helidon이 무엇이고, 어떻게 시작할 수 있는지 간단히 살펴보겠습니다.
+간단히 Helidon이 무엇이고, 어떻게 시작할 수 있는지 간단히 살펴보겠습니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 

@@ -4,7 +4,7 @@ date:   2019-05-03 13:45
 tags: ["Microservice", "Spring Boot", "Spring Batch", "Oracle ADW"]
 ---
 
-얼마전에 Oracle Autonomous Data Warehouse에 특정 3개의 Open API (전국 부동산 실거래 정보)를 통해 가져온 데이터를 적재하는 작업을 진행했었는데 간단히 진행했던 작업들을 정리한 포스트입니다.  
+얼마전에 Oracle Autonomous Data Warehouse에 특정 3개의 Open API (전국 부동산 실거래 정보)를 통해 가져온 데이터를 적재하는 작업을 진행했었는데 간단히 진행했던 작업들을 정리해봤습니다. 
 첫 번째는 Spring Boot에서 ADW 연동 설정하는 부분입니다.
 
 이 작업을 위해서 사용한 컴포넌트와 서비스입니다.

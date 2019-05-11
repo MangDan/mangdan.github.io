@@ -4,7 +4,7 @@ date:   2019-05-02 17:58
 tags: ["Microservice", "Spring Boot", "HikariCP", "String JPA"]
 ---
 
-이전 포스트에서는 Spring Boot에서 Oracle DB연동을 위한 Hikari Connection Pool 설정하였습니다.  
+이전 포스트에서는 Spring Boot에서 Oracle DB연동을 위한 Hikari Connection Pool 설정하는 부분까지 다뤘는데요,
 이번에는 Spring JPA에서 Oracle DB의 데이터를 조회하는 부분을 살펴보겠습니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
