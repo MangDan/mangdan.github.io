@@ -36,7 +36,7 @@ OCI HOME
 
 ### Compartment 생성
 
-OCI에서는 Compartment 라는 개념이 있습니다. 이 부분은 Compute, Network, Storage와 같은 자원들을 Compartment라는 구획으로 나눠서 관리를 할 수 있습니다. 사용자 호긍 팀, 부서 단위로 자원들을 관리할 수 있습니다. 좌측 상단의 햄버거 아이콘을 클릭한 후 Identity를 클릭합니다.
+OCI에서는 Compartment 라는 개념이 있습니다. Compute, Network, Storage와 같은 자원들을 Compartment라는 구획으로 나눠서 관리를 할 수 있습니다. 사용자 혹은 팀, 부서 단위로 자원들을 관리할 수 있습니다. 좌측 상단의 햄버거 아이콘을 클릭한 후 Identity를 클릭합니다.
 
 ![](../assets/images/oci-home-identity.png)
 OCI HOME - Identity
