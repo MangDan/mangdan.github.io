@@ -11,6 +11,9 @@ Oracle에서 개발한 오픈소스 프론트엔드 프레임워크인 JET(Javas
 ### Oracle JET
 
 Oracle JET은 새로운 형태의 프론트엔드 프레임워크라기 보다는 여러가지 오픈소스 라이브러리와 Oracle의 UI 컴포넌트인 Alta UI를 포함해서 만든 프론트엔드 프레임워크입니다.  
+아래는 공식 홈페이지 입니다.  
+
+[Oracle JET](http://oraclejet.org)
 
 Oracle JET은 다음과 같은 오픈 소스 라이브러리를 사용합니다.
 <img src="../assets/images/ojet-open-sources.png" width="80%">
