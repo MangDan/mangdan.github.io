@@ -19,9 +19,9 @@ main:
 ilbangbang:
   - title: English conversation
     children:
-      - title: "1. I wanna"
+      - title: "1강. I wanna"
         url: /ilbangbang/conversation/1/
-      - title: "2. I want you to"
+      - title: "2강. I want you to"
         url: /ilbangbang/conversation/2/
       - title: "3강 - Do you want me to"
         url: /ilbangbang/conversation/3/
