@@ -19,7 +19,7 @@ main:
 ilbangbang:
   - title: English conversation
     children:
-      - title: "1강. I wanna"
+      - title: "1강. I want to (wanna)"
         url: /ilbangbang/conversation/1/
       - title: "2강. I want you to"
         url: /ilbangbang/conversation/2/
@@ -29,5 +29,11 @@ ilbangbang:
         url: /ilbangbang/conversation/4/
       - title: "5강 - I just wanted to let you"
         url: /ilbangbang/conversation/5/
-      - title: "6강 - What do you wanna"
+      - title: "6강 - What do you want to (wanna)"
         url: /ilbangbang/conversation/6/
+      - title: "7강 - What do you want me to"
+        url: /ilbangbang/conversation/7/
+      - title: "9강 - I am just about to"
+        url: /ilbangbang/conversation/9/
+      - title: "10강 - I am here to"
+        url: /ilbangbang/conversation/10/
