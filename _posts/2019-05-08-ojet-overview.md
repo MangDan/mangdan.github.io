@@ -78,31 +78,31 @@ npm install -g @oracle/ojet-cli
 
 Oracle JET Template 프로젝트를 다운로드 받습니다. template은 4가지가 있는데, 기본적인 Navigation이 포함된 navdrawer로 생성합니다. <app name>은 JET 프로젝트 이름으로 필요한 이름을 지정합니다.
 ```
-ojet create <app name> --template=navdrawer||navbar||basic||blank
+> ojet create <app name> --template=navdrawer||navbar||basic||blank
 ```
 
 JET 애플리케이션 실행은 ojet cli로 실행합니다.
 ```
-cd <app name>
+> cd <app name>
 
-ojet serve
+> ojet serve
 ```
 
 위의 경우는 일반적인 웹 애플리케이션입니다. 하이브리드 앱 형태로 구동하기 위해서는 Cordova를 설치하고 위에서 생성한 프로젝트에 add 해줘야 합니다.
 
 ```
-npm install -g cordova
+> npm install -g cordova
 
-ojet add hybrid
+> ojet add hybrid
 
-ojet serve android||ios||windows
+> ojet serve android||ios||windows
 ```
 
 ### Oracle JET Hello World Application
 
 간단히 Hello World 프로젝트를 생성해보고 기본 JET 테이블 컴포넌트를 추가해보도록 하겠습니다.
 ```
-ojet create ojet-hello-world --template=navdrawer
+> ojet create ojet-hello-world --template=navdrawer
 
 Processing template: navdrawer
 Your app structure is generated. Continuing with library install.
@@ -147,8 +147,8 @@ Your app is ready! Change to your new app directory 'ojet-hello-world' and try '
 
 JET Hello World Application을 실행합니다.
 ```
-cd ojet-hello-world
-ojet serve
+> cd ojet-hello-world
+> ojet serve
 
 Warning: Command is missing platform. Default to web.
 Build: true
