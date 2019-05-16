@@ -1,7 +1,7 @@
 ---
 title:  "[API Blueprint] Testing your API with Dredd"
-date:   2019-05-07 16:46
-tags: ["Apiary", "API Blueprint"]
+date:   2019-05-16 15:52
+tags: ["Apiary", "API Blueprint", "Dredd"]
 ---
 
 API 문서 (Swagger or API Blueprint)와 백엔드 서비스의 스펙이 서로 일치하는지 테스트하는 도구인 Dredd에 대해서 소개합니다.
