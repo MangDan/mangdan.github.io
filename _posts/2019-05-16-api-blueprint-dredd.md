@@ -183,7 +183,7 @@ Apiary에 접속해서 위 API Blueprint 문서를 하나 만들어보도록 하
 
 https://apiary.io 로 접속합니다. 계정을 만들어야 하는데 Apiary와 계정은 다음 문서를 참고하시기 바랍니다. 
 
-* [[API Blueprint] Overview](2019-05-07-api-blueprint-overview.md)
+* [[API Blueprint] Overview](/api-blueprint-overview)
 
 먼저 로그인 한 후 좌측 상단의 API이름을 클릭하면 **Create New API Project**라는 버튼을 볼 수 있습니다. 클릭한 후 New API에 이름을 **Hello World API**라고 입력하고 Create API를 클릭해서 API를 하나 생성합니다.
 ![](../assets/images/apiary-dredd-hello-world-api-create.png)
