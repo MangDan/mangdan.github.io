@@ -1,6 +1,6 @@
 ---
 title:  "[Wercker] Overview"
-date:   2019-05-17 15:52
+date:   2019-05-17 17:03
 tags: ["CI/CD", "Wercker"]
 ---
 
@@ -16,7 +16,7 @@ Wercker 관련 웹사이트
 * [Wercker DevCenter: Guides](https://devcenter.wercker.com/)
 * [Wercker GitHub](https://github.com/wercker)
 
-Wercker의 홈페이지에서는 다음과 같이 Wercker를 소개하고 있습니다.  
+Wercker의 홈페이지에서는 다음과 같이 Wercker를 정의하고 있습니다. 
 
 > Wercker is a container-native automation platform to build, dev and deploy multi-service applications
 
@@ -95,7 +95,7 @@ box에 openjdk:8-jdk 라는 이미지를 Docker Hub에서 가져와서 8080 포�
 첫 번째 build 파이프라인에서는 maven을 설치합니다. 그리고 Github에서 가져온 msa-apidev-mp 프로젝트로 이동 (cwd) 후 mvn clean package를 실행해서 빌드합니다.  
 두 번째 test 파이프라인에서는 마찬가지로 msa-apidev-mp 프로젝트로 이동 후 java -jar target/msa-apidev-mp.jar 명령어를 실행해서 테스트 및 실행하는 내용입니다.
 
-```
+```yaml
 #Use OpenJDK base docker image from dockerhub and open the application port on the docker container
 box:
   id: openjdk:8-jdk
