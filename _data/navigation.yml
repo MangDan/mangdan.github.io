@@ -2,10 +2,10 @@
 main:
   - title: "Posts"
     url: /
+  - title: "Tags"
+    url: /tags/
   - title: "Let's Ilbangbang"
     url: /ilbangbang/conversation/1/
-  - title: "Tags Archive"
-    url: /tags/
   - title: "About"
     url: /about/
   # - title: "Sample Posts"
