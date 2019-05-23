@@ -8,8 +8,36 @@ API Design Specification 중 하나인 API Blueprint의 가장 기본이 섹션�
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
-### API Name and metadata
+### Apiary 계정 생성하고, API 설계 프로젝트 생성하기
 
+API Blueprint를 작성하기 위한 에디터는 Apiary를 사용합니다. ATOM Editor나 MS VSCODE에서도 가능하지만, 별도의 플러그인을 설치해야 합니다. 간단하게 온라인으로 가입해서 사용할 수 있는 Apiary 사용을 추천합니다.
+
+Apiary 가입은 GitHub 계정이 있으면 쉽게 가입할 수 있습니다. 혹은 이메일 인증을 받아서 간단히 가입할 수 있으며, 특정 기능들을 제외하고는 기본적으로 무료로 사용할 수 있습니다. 여기서는 GitHub 계정을 가지고 가입하는 절차에 대해서 설명합니다.
+
+먼저, Apiary(https://apiary.io) 홈페이지에 접속한 후 우측 상단의 Sign up 버튼을 클릭합니다.
+![](../assets/images/apiary_home.png)
+
+Continue with GitHub 버튼을 클릭합니다. 
+![](../assets/images/apiary_sign_up.png)
+
+GitHub 계정을 입력하고 Sign In 버튼을 클릭합니다.
+![](../assets/images/apiary_github_account1.png)
+
+Apiary에서 GitHub에 인증을 위한 권한을 요청합니다. Authorize apiaryio 버튼을 클릭합니다.
+![](../assets/images/apiary_github_signup.png)
+
+Apiary에서 사용할 이메일을 입력합니다. GitHub 이메일을 입력합니다.
+![](../assets/images/apiary_github_signup2.png)
+
+Apiary 계정을 처음 만들면 기본 API 프로젝트 하나를 생성해야 합니다.  
+Name your first API 부분에 다음과 같이 Movie API를 입력하고 문서 타입은 API Blueprint로 선택합니다.
+![](../assets/images/apiary_new_api.png)
+
+생성을 하게 되면 좌측에 샘플 API Blueprint 마크다운과 에디터가 보이고, 우측에 HTML 문서가 보입니다.
+좌측 에디터 부분에 API Blueprint 혹은 Swagger 문법을 사용해서 작성하면, 우측에 API 문서가 자동으로 생성됩니다.
+![](../assets/images/apiary_write_api_1.png)
+
+### API Name and metadata
 
 ```markdown
 FORMAT: 1A

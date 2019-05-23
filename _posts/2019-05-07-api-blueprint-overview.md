@@ -18,16 +18,24 @@ API Design Specification 중 하나인 API Blueprint에 대한 간략한 소개�
 
 Public API도 비슷합니다. API를 실제 오픈한 이후에는 변경할 경우 API를 사용하고 있는 많은 애플리케이션이 영향을 받습니다. 따라서 실제 오픈전에 개발이 잘 되어야 하고, 개발이 잘 되려면 설계가 튼실해야 합니다.
 
-### API Design First
+### API-First Design
 
-API Design First는 API 디자인을 우선 진행하고, 디자인된 것을 개발 이전에 프로토타입 해보면서 API 설계자, API 개발자, 앱 개발자간의 빠른 피드백을 통해 API에 대한 퀄리티를 빠른 시간에 높여서 이를 개발에 반영하는 방법입니다.
+API-First Design는 API 디자인을 우선 진행하고, 디자인된 것을 개발 이전에 프로토타입 해보면서 API 설계자, API 개발자, 앱 개발자간의 빠른 피드백을 통해 API에 대한 퀄리티를 빠른 시간에 높여서 이를 개발에 반영하는 방법입니다.
 
 ![](../assets/images/apiblueprint-understanding-api-first-design.png)
 
-![API Design First Process](../assets/images/apiblueprint-api-first-design-process.png "API Design First Process") 
+![API-First Design Process](../assets/images/apiblueprint-api-first-design-process.png "API-First Design Process") 
 
-<center><b>API Design First Process</b></center>
+<center><b>API-First Design Process</b></center>
 
+API-First Design 방식의 장점은 다음과 같습니다.
+
+* Development teams can work in parallel
+    * 설계가 끝나면 Mock API를 통해서 클라이언트 애플리케이션을 바로 개발할 수 있고, API 개발도 동시에 진행이 될 수 있기 때문에 전체 개발 속도를 줄일 수 있습니다.
+* Lower cost of developing applications
+    * 클라이언트 애플리케이션 입장에서 API 개발, 변경을 위한 대기 시간이 감소하기 때문에 (설계 문서만 업데이트 하면 되므로) 전체적인 애플리케이션 개발 비용도 감소될 수 있습니다.
+* Reduced risk of failure
+    * 설계 단계에서 충분한 검토와 프로토타입이 가능함으로, 운영에서의 오류나 스펙 변경을 최소화 할 수 있습니다.
 
 ### API Specification
 
@@ -37,7 +45,7 @@ API 설계 스펙은 여러가지가 있습니다. 이 중에서 가장 유명�
 
 Swagger는 JSON/YAML 포멧을 지원하고, RAML은 YAML, API Blueprint는 Markdown을 지원합니다. 셋 중에서 Markdown을 사용하는 API Blueprint가 상대적으로 간략하고 작성하기 쉽습니다. 물론 디테일면에서 다른 스펙과 비교해 부족한 부분이 있지만, 코드 스니펫이나 스텁까지 필요하지 않다면, API Blueprint도 충분히 API 문서를 만들기 위한 훌륭한 스펙이라고 생각합니다.
 
-API Design Spec 방법을 적용하기 위해서는 Design 우선이 되어야 하기 때문에, 쉽게 작성할 수 있는 표준이 좋습니다. 여기서는 API Design First를 위한 Spec으로 API Blueprint를 중심으로 소개합니다.
+API Design Spec 방법을 적용하기 위해서는 Design 우선이 되어야 하기 때문에, 쉽게 작성할 수 있는 표준이 좋습니다. 여기서는 API-First Design을 위한 Spec으로 API Blueprint 중심으로 소개합니다.
 
 ### API Blueprint
 
