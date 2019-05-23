@@ -1,15 +1,15 @@
 ---
-title:  "Container Native Development 1탄 - API 디자인 및 프로토타입"
-date:   2019-05-20 00:00
-tags: ["Container Native Development", "Helidon", "API Blueprint", "Wercker", "Dredd"]
+title:  "Cloud Native Development 1탄 - API 디자인 및 프로토타입"
+date:   2019-05-20 13:36
+tags: ["Cloud Native Development", "Helidon", "API Blueprint", "Wercker", "Dredd"]
 ---
 
 API 설계부터 구현, CI/CD 파이프라인, 컨테이너 배포 및 API 퍼블리시까지 전반적인 API Development Lifecycle을 오라클 솔루션을 사용해서 실습해 볼 수 있도록 작성되었습니다. 내용이 좀 많기 때문에 세번으로 나누어서 진행할 예정인데요, 첫 번째 포스트에서는 **API 디자인 및 프로토타입**, 두 번째는 **마이크로 서비스 개발**, 세 번째는 **빌드, 테스트, 배포 자동화와 API 퍼블리시** 라는 타이틀로 진행합니다. 
 
-여기서 사용되는 모든 소스는 다음 GitHub 레파지토리에서 공유합니다.
+여기서 사용되는 모든 소스는 다음 GitHub 레파지토리에서 공유되고 있습니다.  
 [실습 자료](https://github.com/MangDan/meetup-190420-api)
 
-사용한 기술은 다음과 같습니다.
+전체 과정에서 사용할 기술은 다음과 같습니다.
 * API Blueprint - API 설계 스펙
 * Oracle Apiary - API 디자인 도구
 * Oracle API Platform - API 관리 서비스 (API Management)
@@ -42,7 +42,7 @@ API 설계부터 구현, CI/CD 파이프라인, 컨테이너 배포 및 API 퍼�
 
 ### API 디자인
 
-우선 API 디자인을 해보겠습니다. Swagger로 할 수 있지만, 여기서는 쉽게 마크다운으로 작성 가능한 API Blueprint로 작성해보도록 하겠습니다. 에디터는 [Apiary](https://apiary.io/)를 사용할 것이므로 접속해서 가입을 합니다. 가입은 GitHub 계정이 있으면 쉽게 하실 수 있습니다. 없더라도 간단한 이메일 인증만 받으면 가입해서 무료로 사용해볼 수 있습니다.  
+우선 API 디자인을 해보겠습니다. Swagger로 할 수 있지만, 여기서는 쉽게 마크다운으로 작성 가능한 API Blueprint로 작성해보도록 하겠습니다. 에디터는 [Apiary](https://apiary.io/)를 사용할 것이므로 계정이 필요합니다. 가입은 GitHub 계정이 있으면 쉽게 하실 수 있습니다. 없더라도 간단한 이메일 인증만 받으면 가입해서 무료로 사용해볼 수 있습니다.  
 가입 방법과 Apiary에 대한 설명은 다음 포스트를 참고하세요.
 
 [[API Blueprint] Basic - Apiary 계정 생성하고, API 설계 프로젝트 생성하기](/api-blueprint-basic)
@@ -273,8 +273,8 @@ Oracle API Platform에서 Mock API URL을 서비스로 등록하고 API를 신�
 #### Application Prototype
 이제 등록된 API를 활용해서 애플리케이션 프로토타입을 해보는 과정입니다. 프론트엔드 애플리케이션은 Oracle JET로 만들어봤습니다.
 
-소스는 다음 깃헙에서 다운로드 받을 수 있습니다.  
-https://github.com/MangDan/meetup-190420-api
+소스는 다음 깃헙에서 다운로드 받을 수 있습니다.
+git clone https://github.com/MangDan/meetup-190420-api
 
 다운로드 받으면 jet-movie-msa-ui 라는 폴더가 있고 하위에 endpoints.json 파일에 위 게이트웨이에 배포한 API 엔드포인트를 입력합니다.
 
@@ -312,5 +312,8 @@ ojet serve
 구동된 화면입니다.  
 ![](../assets/images/api-prototpye-ojet-1.png)
 
-실제 API가 개발되기 전에 Mock API와 API Gateway를 통해서 프로토타입을 함으로써, 이 과정에서 설계자, API 개발자, APP 개발자, API 관리자간에 빠른 피드백과 반영이 가능해집니다.
+이번 시간에는 API-First Design 단계에서 API Design과 Try(Prototype)에 대해서 다뤘습니다.
+![](../assets/images/api-first-design-to-prototype-process.png)
+
+실제 API가 개발되기 전에 Mock API와 API Gateway를 통해서 프로토타입을 함으로써, 이 과정에서 설계자, API 개발자, APP 개발자, API 관리자간에 빠른 피드백 생기고, 정확한 설계가 가능해집니다.
 다음 시간에는 MicroProfile 기반의 Oracle Helidon Framework을 사용해서 서비스를 실제 개발해 보도록 하겠습니다.
