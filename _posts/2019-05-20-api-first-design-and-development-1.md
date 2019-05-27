@@ -9,7 +9,7 @@ API 설계부터 구현, CI/CD 파이프라인, 컨테이너 배포 및 API 퍼�
 여기서 사용되는 모든 소스는 다음 GitHub 레파지토리에서 공유되고 있습니다.  
 [실습 자료](https://github.com/MangDan/meetup-190420-api)
 
-전체 과정에서 사용할 기술은 다음과 같습니다.
+전 과정에서 사용하는 기술은 다음과 같습니다.
 * API Blueprint - API 설계 스펙
 * Oracle Apiary - API 디자인 도구
 * Oracle API Platform - API 관리 서비스 (API Management)
@@ -78,46 +78,54 @@ HOST: http://polls.apiblueprint.org/
 + Response 200 (application/json)
 
         [
-            {
-                "id": 278,
-                "title": "쇼생크 탈출",
-                "vote_count": 12728,
-                "vote_average": 8.7,
-                "poster_path": "/iZdih9zQAqxNadp0ScHyYRXsXLf.jpg",
-                "release_date": "1995-01-28"
-            },
-            {
-                "id": 238,
-                "title": "대부",
-                "vote_count": 9746,
-                "vote_average": 8.6,
-                "poster_path": "/cOwVs8eYA4G9ZQs7hIRSoiZr46Q.jpg",
-                "release_date": "1972-12-27"
-            },
-            {
-                "id": 129,
-                "title": "센과 치히로의 행방불명",
-                "vote_count": 7174,
-                "vote_average": 8.5,
-                "poster_path": "/mD49waY0XR7HNrS13r63tfgYT08.jpg",
-                "release_date": "2002-06-28"
-            },
-            {
-                "id": 424,
-                "title": "쉰들러 리스트",
-                "vote_count": 7746,
-                "vote_average": 8.5,
-                "poster_path": "/oyyUcGwLX7LTFS1pQbLrQpyzIyt.jpg",
-                "release_date": "1994-03-05"
-            },
-            {
-                "id": 550,
-                "title": "파이트 클럽",
-                "vote_count": 15870,
-                "vote_average": 8.4,
-                "poster_path": "/kabpExFv9JLp778w9ZtCtZnWH9N.jpg",
-                "release_date": "1999-11-13"
-            }
+              {
+                "id": 576393,
+                "poster_path": "/wtaSH8MfJSCEIrrEX9SQuHdU5sl.jpg",
+                "release_date": "2019-03-27",
+                "title": "장난스런 키스",
+                "vote_average": 5,
+                "vote_count": 25
+              },
+              {
+                "id": 531309,
+                "poster_path": "/eTEXcHiEk6r10HD2015xNYLUWYu.jpg",
+                "release_date": "2019-05-23",
+                "title": "더 보이",
+                "vote_average": 5,
+                "vote_count": 23
+              },
+              {
+                "id": 504172,
+                "poster_path": "/uoP6ax0PqMTdd8b2jkpEXuEkqvi.jpg",
+                "release_date": "2019-03-14",
+                "title": "라스트 미션",
+                "vote_average": 6,
+                "vote_count": 1468
+              },
+              {
+                "id": 480414,
+                "poster_path": "/8kllbCOM38idMWXzsk6mMzpbcsC.jpg",
+                "release_date": "2019-04-17",
+                "title": "요로나의 저주",
+                "vote_average": 5,
+                "vote_count": 292
+              },
+              {
+                "id": 458723,
+                "poster_path": "/vfNBftZoXsUnNWccz8ew9h8Jicx.jpg",
+                "release_date": "2019-03-27",
+                "title": "어스",
+                "vote_average": 7,
+                "vote_count": 1331
+              },
+              {
+                "id": 458156,
+                "poster_path": "/ghx93NNkUHStNFIoXRoCMbfsxHv.jpg",
+                "release_date": "2019-06-26",
+                "title": "존 윅 3: 파라벨룸",
+                "vote_average": 7,
+                "vote_count": 375
+              }
         ]
 
 ### 영화 상세 조회 [GET /api/search/v1/movies/{id}]
@@ -130,7 +138,7 @@ HOST: http://polls.apiblueprint.org/
             api_key: adfadfvkljadflkjasdflkasdf
    
 + Parameters
-   + id : 278 (number, required) - 영화 아이디
+   + id : 458156 (number, required) - 영화 아이디
    
 + Response 200 (application/json)
 
@@ -141,14 +149,14 @@ HOST: http://polls.apiblueprint.org/
    + Body
 
             {
-                "id": 278,
-                "title": "쇼생크 탈출",
-                "vote_count": 12728,
-                "vote_average": 8.7,
-                "poster_path": "/iZdih9zQAqxNadp0ScHyYRXsXLf.jpg",
-                "release_date": "1995-01-28",
-                "overview": "촉망받는 은행 간부 앤디 듀프레인(팀 로빈슨)은 아내와 그녀의 정부를 살해했다는 누명을 쓴다. 주변의 증언과 살해 현장의 그럴듯한 증거들로 그는 종신형을 선고받고 악질범들만 수용한다는 지옥같은 교도소 쇼생크로 향한다. 인간 말종 쓰레기들만 모인 그곳에서 그는 이루 말할 수 없는 억압과 짐승보다 못한 취급을 당한다. 그러던 어느 날, 간수의 세금을 면제받게 해 준 덕분에 그는 일약 교도소의 비공식 회계사로 일하게 된다. 그 와중에 교도소 소장은 죄수들을 이리저리 부리면서 검은 돈을 긁어 모으고 앤디는 이 돈을 세탁하여 불려주면서 그의 돈을 관리하는데..."
-            }
+                "id": 458156,
+                "poster_path": "/ghx93NNkUHStNFIoXRoCMbfsxHv.jpg",
+                "release_date": "2019-06-26",
+                "title": "존 윅 3: 파라벨룸",
+                "vote_average": 7,
+                "vote_count": 375,
+                "overview": "업계 레전드 킬러 ‘존 윅’은 국제암살자연합을 통해 파문조치를 당한 후 그에게 따라 붙은 역대 최고의 현상금 1,400만 불로 인해 전 세계의 가장 위협적인 킬러들이 그와의 전쟁을 선포한다."
+              }
            
 
 # Group 영화인 API
@@ -164,7 +172,7 @@ HOST: http://polls.apiblueprint.org/
             api_key: adfadfvkljadflkjasdflkasdf
 
 + Parameters
-   + filmography : 쇼생크 (string, required) - 필모 그래피
+   + filmography : 존 윅 3 (string, required) - 필모 그래피
 
 + Response 200 (application/json)
     + Attributes (array[MoviePeopleMeta])
@@ -179,7 +187,7 @@ HOST: http://polls.apiblueprint.org/
             api_key: adfadfvkljadflkjasdflkasdf
 
 + Parameters
-   + id : 10084614 (number, required) - 영화인 아이디
+   + id : 10078687 (number, required) - 영화인 아이디
 
 + Response 200 (application/json)
     + Attributes (MoviePeople)
@@ -188,12 +196,12 @@ HOST: http://polls.apiblueprint.org/
 
 ## MoviePeople (object)
 + Include MoviePeopleMeta
-+ filmography : 쇼생크 탈출 (string, optional) - 필모그래피
++ filmography : 존 윅 3: 파라벨룸 (string, optional) - 필모그래피
 
 ## MoviePeopleMeta (object)
 + id : 10084614 (number, required) - 아이디
-+ name : 프랭크 다라본트 (string, required) - 이름
-+ role : 감독 (string, optional) - 역할
++ name : 키아누 리브스 (string, required) - 이름
++ role : 배우 (string, optional) - 역할
 ```
 
 위에서 정의한 API 문서에 따르면 총 2개의 그룹과 2개의 API 리소스가 있는 것을 알 수 있습니다.

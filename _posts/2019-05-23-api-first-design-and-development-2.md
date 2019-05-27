@@ -9,7 +9,7 @@ tags: ["Cloud Native Development", "Helidon", "API Blueprint", "Wercker", "Dredd
 여기서 사용되는 모든 소스는 다음 GitHub 레파지토리에서 공유되고 있습니다.  
 [실습 자료](https://github.com/MangDan/meetup-190420-api)
 
-전체 과정에서 사용할 기술은 다음과 같습니다.
+전 과정에서 사용하는 기술은 다음과 같습니다.
 * API Blueprint - API 설계 스펙
 * Oracle Apiary - API 디자인 도구
 * Oracle API Platform - API 관리 서비스 (API Management)
@@ -30,7 +30,8 @@ CREATE TABLE MOVIE(
     POSTER_PATH VARCHAR2(200),
     VOTE_COUNT NUMBER,
     VOTE_AVERAGE NUMBER,
-    RELEASE_DATE VARCHAR2(200)
+    RELEASE_DATE VARCHAR2(200),
+    OVERVIEW VARCHAR2(4000)
 )
 
 CREATE TABLE MOVIE_PEOPLE(
@@ -359,4 +360,4 @@ curl로 테스트해보도록 하겠습니다.
 이번 시간에는 Microprofile 기반의 Helidon Framework을 활용해서 실제 REST 서비스를 구현하고 패키징 및 실행하는 부분을 다뤘습니다.
 ![](../assets/images/api-first-design-building-service-process.png)
 
- 다음 시간에는 Wercker CI/CD와 Oracle Kubernetes Engine을 활용해서 빌드/테스트/배포 자동화하고 마지막으로 API Gateway에 최종 결과물을 반영하는 내용을 가지고 진행합니다.
+ 다음 시간에는 Wercker CI/CD와 Oracle Kubernetes Engine을 활용해서 빌드/테스트/배포 자동화하는 방법과 최종적으로 배포된 서비스를 API Gateway에 적용해서 UI를 완성하는 부분까지 다루도록 하겠습니다.
