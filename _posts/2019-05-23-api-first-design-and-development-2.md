@@ -1,15 +1,15 @@
 ---
-title:  "Cloud Native Development 2탄 - 마이크로 서비스 개발하기"
+title:  "API-Design First & Microservice 개발 2탄 - 마이크로 서비스 개발하기"
 date:   2019-05-23 15:11
-tags: ["Cloud Native Development", "Helidon", "API Blueprint", "Wercker", "Dredd"]
+tags: ["Helidon", "Microservice"]
 ---
 
-전 시간([Cloud Native Development 1탄 - API 디자인 및 프로토타입](/api-first-design-and-development-1))에 이어서 이번 시간에는 API 설계 내용을 토데로 Microprofile 기반의 Oracle Helidon을 사용해서 서비스를 개발해보도록 하겠습니다.
+전 포스트([API-Design First & Microservice 개발 1탄 - API 디자인 및 프로토타입](/api-first-design-and-development-1))에 이어서 이번에는 API 설계 내용을 토데로 Microprofile 기반의 Oracle Helidon을 사용해서 서비스를 개발해보는 내용입니다.
 
 여기서 사용되는 모든 소스는 다음 GitHub 레파지토리에서 공유되고 있습니다.  
 [실습 자료](https://github.com/MangDan/meetup-190420-api)
 
-전 과정에서 사용하는 기술은 다음과 같습니다.
+전체 과정에서 사용하는 기술은 다음과 같습니다.
 * API Blueprint - API 설계 스펙
 * Oracle Apiary - API 디자인 도구
 * Oracle API Platform - API 관리 서비스 (API Management)

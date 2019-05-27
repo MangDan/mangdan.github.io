@@ -1,15 +1,15 @@
 ---
-title:  "Cloud Native Development 1탄 - API 디자인 및 프로토타입"
+title:  "API-Design First & Microservice 개발 1탄 - API 디자인 및 프로토타입"
 date:   2019-05-20 13:36
-tags: ["Cloud Native Development", "Helidon", "API Blueprint", "Wercker", "Dredd"]
+tags: ["Apiary", "API Blueprint", "API Platform"]
 ---
 
-API 설계부터 구현, CI/CD 파이프라인, 컨테이너 배포 및 API 퍼블리시까지 전반적인 API Development Lifecycle을 오라클 솔루션을 사용해서 실습해 볼 수 있도록 작성되었습니다. 내용이 좀 많기 때문에 세번으로 나누어서 진행할 예정인데요, 첫 번째 포스트에서는 **API 디자인 및 프로토타입**, 두 번째는 **마이크로 서비스 개발**, 세 번째는 **빌드, 테스트, 배포 자동화와 API 퍼블리시** 라는 타이틀로 진행합니다. 
+API 설계부터 구현, CI/CD 파이프라인, 컨테이너 배포 및 API 퍼블리시까지 전반적인 API Development Lifecycle을 오라클 솔루션을 사용해서 실습해 볼 수 있도록 작성되었습니다. 내용이 좀 많기 때문에 세번으로 나누어서 진행할 예정인데요, 첫 번째 포스트에서는 **API 디자인 및 프로토타입**, 두 번째는 **마이크로 서비스 개발**, 세 번째는 **빌드, 테스트, 배포 자동화와 API 퍼블리시** 순으로 정리하려고 합니다. 
 
 여기서 사용되는 모든 소스는 다음 GitHub 레파지토리에서 공유되고 있습니다.  
 [실습 자료](https://github.com/MangDan/meetup-190420-api)
 
-전 과정에서 사용하는 기술은 다음과 같습니다.
+전체 과정에서 사용하는 기술은 다음과 같습니다.
 * API Blueprint - API 설계 스펙
 * Oracle Apiary - API 디자인 도구
 * Oracle API Platform - API 관리 서비스 (API Management)

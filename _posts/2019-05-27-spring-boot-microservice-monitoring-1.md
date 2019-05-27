@@ -1,10 +1,10 @@
 ---
-title:  "API-Design First & Microservice 개발 3탄 - 빌드, 테스트, 배포 자동화와 API 퍼블리시"
-date:   2019-05-27 11:27
-tags: ["Wercker", "Dredd", "Kubernetes"]
+title:  "Cloud Native Development 3탄 - 빌드, 테스트, 배포 자동화와 API 퍼블리시"
+date:   2019-05-23 15:11
+tags: ["Cloud Native Development", "Helidon", "API Blueprint", "Wercker", "Dredd"]
 ---
 
-전 포스트([API-Design First & Microservice 개발 3탄 - 마이크로 서비스 개발하기](/api-first-design-and-development-3))에 이어서 이번 시간에는 CI/CD 빌드 파이프라인 자동화 및 API 게이트웨이 퍼블리시에 대한 내용으로 진행합니다.
+전 시간([Cloud Native Development 2탄 - 마이크로 서비스 개발하기](/api-first-design-and-development-3))에 이어서 이번 시간에는 CI/CD 빌드 파이프라인 자동화 및 API 게이트웨이 퍼블리시에 대한 내용으로 진행합니다.
 
 여기서 사용되는 모든 소스는 다음 GitHub 레파지토리에서 공유되고 있습니다.  
 [실습 자료](https://github.com/MangDan/meetup-190420-api)
