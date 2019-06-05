@@ -98,7 +98,7 @@ STS에 Java Home을 지정합니다. STS 환경설정 > Java > Installed JREs �
 
 ### Spring Admin
 첫 번째 시나리오로 Spring Admin을 사용해서 모니터링 해보겠습니다.
-Spring Admin은 Spring Boot 애플리케이션 모니터링을 위해 codecentric AG라는 회사에서 시작한 커뮤니티 프로젝트로 Spring Boot Actuator의 Endpoints의 정보를 가져와서 모니터링할 수 있는 Spring Boot Actuator Monitoring UI 프레임워크 입니다. 간단히 Spring Boot 프레임워크에 디펜덴시를 추가함으로써 Spring Boot Admin 서버를 구성할 수 있습니다.
+Spring Admin은 Spring Boot 애플리케이션 모니터링을 위해 codecentric AG라는 회사에서 시작한 커뮤니티 프로젝트로 Spring Boot Actuator의 Endpoints의 정보를 가져와서 모니터링할 수 있는 Spring Boot Actuator Monitoring UI 프레임워크 입니다. 간단히 Spring Boot 프레임워크에 디펜덴시를 추가함으로써 Spring Boot Admin (이하 SBA) 서버를 구성할 수 있습니다.
 
 #### Spring Admin Server 셋업
 먼저 Spring Initializr를 통해서 Spring Boot 프로젝트를 하나 생성하겠습니다.  
@@ -153,7 +153,7 @@ Name 부분만 spring-admin-server로 지정하고 Next 버튼을 클릭합니�
 * spring-boot-starter-web 
     * web, RESTful, Spring MVC를 사용하는 애플리케이션 개발을 위한 부분으로 톰켓이 기본 자바 웹 컨테이너로 포함.
 * spring-boot-admin-starter-server
-    * Spring Boot Admin 서버 스타터
+    * SBA 서버 스타터
 * spring-boot-devtools
     * Spring Boot 개발자 편의를 위해 제공되는 도구로 몇가지 기능이 있지만 주로 소스 변경 시 자동으로 재시작되는 기능 때문에 많이 사용.
 * spring-boot-starter-security
@@ -315,11 +315,11 @@ https://www.thapatechnical.com/2019/02/love-calculator-using-javascript-html.htm
 다운로드 받은 각 프로젝트 폴더를 선택하고, **copy projects into workspace**를 체크해서 spring-admin-server 프로젝트가 있는 workspace로 Import 합니다.
 ![](../assets/images/msa-monitoring-sts-import-project.png)
 
-좌측 Project Explorer에 Spring Boot Admin을 포함해서 총 5개의 프로젝트가 보이면 됩니다.  
+좌측 Project Explorer에 SBA를 포함해서 총 5개의 프로젝트가 보이면 됩니다.  
 <img src="../assets/images/msa-monitoring-sts-sba-all-import.png" width="40%"/>
 
 #### Spring Boot Application 설정 확인
-3개의 Spring Boot 프로젝트(love-calculator-consumer, yes-or-no-consumer, love-calculator-service)의 pom.xml은 모두 동일하게 다음과 같이 의존성 설정이 되어 있습니다. Spring Boot Admin Client를 위해 새로 추가된 부분은 다음과 같습니다.
+3개의 Spring Boot 프로젝트(love-calculator-consumer, yes-or-no-consumer, love-calculator-service)의 pom.xml은 모두 동일하게 다음과 같이 의존성 설정이 되어 있습니다. SBA Client를 위해 새로 추가된 부분은 다음과 같습니다.
 
 * properties의 spring-boot-admin.version
 * dependency의 spring-boot-starter-web, spring-boot-admin-starter-client, spring-boot-starter-actuator, spring-boot-devtools
@@ -420,8 +420,8 @@ love-calculator-service는 AJAX로 호출되는 부분이므로, Cross Domain Aj
 ![](../assets/images/msa-monitoring-sts-controller-annotation.png)
 
 ### 테스트
-Spring Boot Admin 서버가 작동하고 있는 상태에서 love-calculator-web을 제외한 Spring Boot Client Application을 시작합니다.  
-Spring Boot Admin 서버와 마찬가지로 각 프로젝트 클릭 후 "Run As > Spring Boot App"을 클릭하여 각 서비스를 시작합니다. (순서는 상관 없습니다.)
+SBA 서버가 작동하고 있는 상태에서 love-calculator-web을 제외한 Spring Boot Client Application을 시작합니다.  
+SBA 서버와 마찬가지로 각 프로젝트 클릭 후 "Run As > Spring Boot App"을 클릭하여 각 서비스를 시작합니다. (순서는 상관 없습니다.)
 
 마지막으로 love-calculator-web/WebContent/index.html 파일을 Browser에서 오픈합니다.
 ![](../assets/images/msa-monitoring-love-calculator-home.png)
@@ -429,7 +429,7 @@ Spring Boot Admin 서버와 마찬가지로 각 프로젝트 클릭 후 "Run As 
 간단히 테스트해보겠습니다. **Your Name**과 **Love Name**을 입력하고 **click** 버튼을 클릭합니다. 다음과 같이 Percentage와 관련 이미지가 나오면 성공입니다.
 ![](../assets/images/msa-monitoring-love-calculator-test.png)
 
-다음 정보와 함께 Spring Boot Admin에 접속해서 메트릭스 모니터링 대시보드를 확인해보도록 하겠습니다.
+다음 정보와 함께 SBA에 접속해서 메트릭스 모니터링 대시보드를 확인해보도록 하겠습니다.
 * http://localhost:8090
 * admin / admin
 
@@ -446,14 +446,14 @@ Spring Boot Admin 서버와 마찬가지로 각 프로젝트 클릭 후 "Run As 
 ![](../assets/images/msa-monitoring-spring-boot-admin-jvm-threads.png)
 
 ### 정리
-Spring Boot Admin을 활용해서 Spring Boot Service Metrics Monitoring 하는 부분에 대해서 간략히 데모와 함께 살펴봤습니다. Client Service를 Spring Boot Admin에 연결하는 방법은 두 가지가 있을 수 있습니다.
+SBA을 활용해서 Spring Boot Service Metrics Monitoring 하는 부분에 대해서 간략히 데모와 함께 살펴봤습니다. Client Service를 SBA에 연결하는 방법은 두 가지가 있을 수 있습니다.
 
 1. Client 서비스에 spring-boot-admin-starter-client dependency 추가
 2. Service Discovery (Eureka, Consul, Zookeeper)를 함께 사용
 
-Spring Boot Admin은 Spring Application 모니터링을 위한 훌륭한 도구이지만, Spring 관련 의존성(actuator, spring boot admin)이 강해서 다른 프레임워크나 언어로 개발된 서비스 모니터링은 불가능합니다. 하지만 spring boot admin에 대한 의존성을 포함하지 않고 (Actuator는 필요) 연결할 수도 있는데, **Service Discovery** 솔루션을 사용하는 것이 그 방법입니다. 물론 Spring Boot Admin을 사용하기 위해서는 Actuator가 필요하기 때문에 Spring Boot 프레임워크를 사용해야 하는건 변함이 없습니다. 어쨋든 MSA 환경에서 대부분의 서비스들은 **Service Discovery**에 등록해서 서비스를 해야 하므로, 모니터링도 **Service Discovery**에 붙이는 것이 제대로된 모습이라고 볼 수 있습니다. 다음에는 Spring Boot Admin에 Netflix **Service Discovery** 솔루션인 **Eureka**를 붙여서 모니터링 하는 부분을 포스트하도록 하겠습니다.
+SBA은 Spring Application 모니터링을 위한 훌륭한 도구이지만, Spring 관련 의존성(actuator, SBA client)이 강해서 다른 프레임워크나 언어로 개발된 서비스 모니터링은 불가능합니다. 하지만 SBA에 대한 의존성을 포함하지 않고 (Actuator는 필요) 연결할 수도 있는데, **Service Discovery** 솔루션을 사용하는 것이 그 방법입니다. 물론 SBA을 사용하기 위해서는 Actuator가 필요하기 때문에 Spring Boot 프레임워크를 사용해야 하는건 변함이 없습니다. 어쨋든 MSA 환경에서 대부분의 서비스들은 **Service Discovery**에 등록해서 서비스를 해야 하므로, 모니터링도 **Service Discovery**에 붙이는 것이 제대로된 모습이라고 볼 수 있습니다. 다음에는 SBA에 Netflix **Service Discovery** 솔루션인 **Eureka**를 붙여서 모니터링 하는 부분을 포스트하도록 하겠습니다.
 
-> 현재 Spring Boot Admin 2.x 에서는 Spring Boot Client 1.5.x 버전에 대한 모니터링을 지원하고 있습니다. 단, 모니터링 Endpoint가 변경된 관계로 기존 Spring Boot Client 1.5.x 버전의 application.properties(yml)에 다음 내용을 추가해야 합니다.
+> 현재 SBA 2.x 에서는 Spring Boot Client 1.5.x 버전에 대한 모니터링을 지원하고 있습니다. 단, 모니터링 Endpoint가 변경된 관계로 기존 Spring Boot Client 1.5.x 버전의 application.properties(yml)에 다음 내용을 추가해야 합니다.
 > ```
 > spring.boot.admin.api-path=instances
 > ```

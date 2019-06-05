@@ -5,7 +5,7 @@ tags: ["Oracle Cloud"]
 ---
 
 OCI-CLI는 Oracle Cloud Infrastructure 관리 기능을 제공하는 CLI 도구입니다.  
-이번 포스트에서는 OCI-CLI를 설치하고 구성하는 방법에 대해서 살펴보도록 하겠습니다.
+이번 포스팅에서는 OCI-CLI를 설치하고 구성하는 방법에 대해서 살펴보도록 하겠습니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
