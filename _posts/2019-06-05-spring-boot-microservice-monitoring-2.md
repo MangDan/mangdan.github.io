@@ -354,7 +354,7 @@ SBA와 마찬가지로 Eureka에도 Spring Security 적용이 가능할텐데, �
 **Eureka 서버가 다운되면**
 SBA와 Eureka를 모두 올려놓은 상태에서 Eureka 서버를 Terminate했지만 여전히 SBA에는 서비스가 남아 있습니다. SBA쪽에서 Eureka 서버 접속 오류 메시지가 뜨면서 Cache 갱신이 안되는 메시지가 뜨는데, 먼가 어떤 옵션이 있을 것 같은데 찾지 못했습니다. 이 부분도 일단은 패스...
 
-### 참고
+### 참고 자료
 * https://github.com/SDSACT/coe-guide/blob/master/Service%20Discovery/Eureka_2.md
 * https://roadmichi.blogspot.com/2016/01/edge-server-ribbon-api.html
 * https://codecentric.github.io/spring-boot-admin/current/
