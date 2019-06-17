@@ -97,14 +97,14 @@ social:
 
 # Analytics
 analytics:
-  provider               : google-gtag # false (default), "google", "google-universal", "custom"
+  provider               : "google-gtag" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          : UA-139522937-1
+    tracking_id          : "UA-139522937-1"
     anonymize_ip         : # true, false (default)
 
 # Site Author
 author:
-  name             : Dan Kim
+  name             : "Dan Kim"
   avatar           : "/assets/images/dan3.png"
   bio              : "Developer / Architecture / Solution Engineer / Sales Consultant"
   location         : "Seoul, Korea"
