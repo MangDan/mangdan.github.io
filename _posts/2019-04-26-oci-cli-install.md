@@ -25,11 +25,11 @@ Set-ExecutionPolicy RemoteSigned
 powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.ps1'))"
 ```
 
-설치가 시작되면 설치 경로를 입력하라고 나오는데, 기본 경로로 설치해도 되지만, 저의 경우는 다음과 같이 임의의 경로로 지정해서 설치했습니다.
+설치가 시작되면 설치 경로를 입력하라고 나오는데, 기본 경로로 설치해도 되지만, 여기서는 다음과 같이 임의의 경로로 지정해서 설치했습니다.
 ```
-* /Users/{name}/Software/oracle/oci-cli
-* /Users/{name}/oracle/oci-cli-bin
-* /Users/{name}/oracle/oci-cli-bin/oci-cli-scripts
+* /Users/DonghuKim/Software/oracle/oci-cli
+* /Users/DonghuKim/oracle/oci-cli-bin
+* /Users/DonghuKim/oracle/oci-cli-bin/oci-cli-scripts
 ```
 
 설치가 완료되면 bash_profile에 다음과 같은 내용이 추가됩니다.  
