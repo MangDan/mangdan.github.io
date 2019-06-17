@@ -4,7 +4,7 @@ date:   2019-06-03 15:02
 tags: ["Spring Boot Admin", "Microservice", "Eureka"]
 ---
 
-Microservice Architecture (이하 MSA)를 구축할 때 생각해야 될 여러가지 구성 요소중에 하나가 모니터링이 아닌가 생각됩니다. 수백개 혹은 수천개의 서비스들이 서로 다른 서버와 네트워크에서 운영되고, 각각의 서비스들이 유기적으로 연결되어 동작하는 MSA 환경에서 각 개별 혹은 전체 서비스들을 모니터링 하는 것은 생각만 해도 음.. 보통일이 아닐겁니다. 이러한 MSA가 적용된 분산 환경에서의 모니터링을 위한 다양한 솔루션들이 있는데, 우선은 국내 개발자들이 가장 많이 사용하는 스프링 기반 마이크로 서비스를 위한 몇가지 오픈소스 모니터링 방법들에 대해서 살펴보고 실습을 해보려고 합니다.
+Microservice Architecture (이하 MSA)를 구축할 때 생각해야 될 여러가지 구성 요소중에 하나가 모니터링이 아닌가 생각됩니다. 수백개 혹은 수천개의 서비스들이 서로 다른 서버와 네트워크에서 운영되고, 각각의 서비스들이 유기적으로 연결되어 동작하는 MSA 환경에서 각 개별 혹은 전체 서비스들을 모니터링 하는 것은 생각만 해도 보통일이 아닐겁니다. 이러한 MSA가 적용된 분산 환경에서의 모니터링을 위한 다양한 솔루션들이 있는데, 우선은 국내 개발자들이 가장 많이 사용하는 스프링 기반 마이크로 서비스를 위한 몇가지 오픈소스 모니터링 방법들에 대해서 살펴보고 실습을 해보려고 합니다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
@@ -22,24 +22,24 @@ Microservice Architecture (이하 MSA)를 구축할 때 생각해야 될 여러�
 2008년 8월부터 Java와 Oracle DB로 구성된 거대한 모놀리식 아키텍쳐를 마이크로 서비스로 전환하기 시작했으며, 거의 7년간의 노력 끝에 2016년 1월에 완료했습니다. 넷플릭스는 자사의 서비스에 적용해 가면서 만들어낸 다양한 솔루션들을 오픈소스로 공개했는데, 이것이 Netflix OSS (Open Source Software) 입니다. 이렇게 공개한 솔루션들중 일부가 스프링 클라우드 프로젝트 하위의 Spring Cloud Netflix라는 이름으로 통합되었습니다. Eureka, Hystrix, Feign, Ribbon, Archaius, Zuul이 통합된 대표적인 Netflix OSS 솔루션들입니다.
 
 ### Istio
-Netflix OSS와 요즘 자주 비교되는 부분이 Istio인 것 같습니다.
-Netflix OSS는 애플리케이션 소스 레벨에서 이러한 솔루션들을 통합하는데, 이 부분을 애플리케이션 소스 레벨이 아닌 인프라 레벨에서 다루고자 해서 나온 방법이 **서비스 매쉬(Service Mesh)** 이고, 대표적인 솔루션이 IBM, Google 및 Lyft가 공동 개발한 [Istio](https://istio.io/)입니다.  
-Netflix OSS에서는 Service Discovery, Load Balancing, Fault Tolerance (Circuit Breaker 등), Gateway, Monitoring등의 기능을 애플리케이션 영역에서 다뤄야 했는데, 이 부분을 인프라에서 할 수 있게 한 것으로 개발자들이 신경쓰지 크게 신경쓰지 않아도 되며, 애플리케이션 소스를 건드릴 필요도 없고, 특정 언어나 프레임워크에 종속될 필요도 없다는 장점이 있습니다. 점점 MSA와 관련해서 다양한 기술들이 생기고 또한 진화하고 있고, 쿠버네티스와 같은 컨테이너에 대한 기술 수준이 계속해서 발전하면서, MSA가 점점 진화해 나가고 있는데, MSA를 1세대와 2세대로 굳이 나눈다면 Istio가 있느냐 없느냐로 나눠진다고 얘기 할 수 있을것 같습니다. Istio가 새로 나왔기 때문에 좋은점만 있는 것은 아닙니다. 2018년 7월에 정식으로 1.0이 릴리즈 되었지만, 아직 굵직한 레퍼런스가 없기 때문에, 도입을 위해서는 여러가지 측면에서 검증이 필요할 것으로 보입니다.
+Netflix OSS와 요즘 자주 비교되는 부분이 서비스 매쉬, 그리고 관련 솔루션인 Istio인 것 같습니다.
+Netflix OSS는 애플리케이션 소스 레벨에서 통합을 지원하는데 반해, 애플리케이션 소스 레벨이 아닌 인프라 레벨에서 다루기 위한 방법이 **서비스 매쉬(Service Mesh)** 이고, 대표적인 솔루션이 IBM, Google 및 Lyft가 공동 개발한 [Istio](https://istio.io/)입니다.  
+Netflix OSS에서는 Service Discovery, Load Balancing, Fault Tolerance (Circuit Breaker 등), Gateway, Monitoring등의 기능을 애플리케이션 영역에서 다뤄야 했는데, 이 부분을 인프라에서 할 수 있게 한 것으로 개발자들이 코드 레벨에서 신경쓰지 않아도 되며, 특정 언어나 프레임워크에 종속될 필요도 없다는 장점이 있습니다. 점점 MSA와 관련해서 다양한 기술들이 생기고 진화하고 있는데, 
+특히 쿠버네티스와 같은 컨테이너 기술 수준이 계속해서 발전하면서, MSA가 점점 진화해 나가고 있는 것 같습니다. MSA를 1세대와 2세대로 굳이 나눈다면 Istio가 있느냐 없느냐로 나눠진다고 얘기 할 수 있을것 같습니다. Istio가 새로 나왔다고 해서 좋은점만 있는 것은 아닙니다. 2018년 7월에 정식으로 1.0이 릴리즈 되었지만, 아직 굵직한 레퍼런스가 없기 때문에, 도입을 위해서는 여러가지 측면에서 검증이 필요할 것으로 보입니다.
 
 ### Microservice Monitoring
 마이크로서비스 모니터링을 말하면서 Netflix OSS와 Istio를 언급하는 이유는 마이크로서비스 모니터링 아키텍쳐가 서로 다르고 구현하는 방식이 다르기 때문입니다. Spring Boot 기반 마이크로 서비스라 하더라도 Istio를 쓰느냐 안쓰느냐에 따라 그 구성의 차이가 있어서 이 부분을 미리 언급했습니다.
-시나리오는 아래과 같이 총 5가지입니다. 모니터링은 Spring Admin과 Prometheus + Grafana 조합이고, 여기에 Service Discovery가 포함됩니다. Service Discovery 부분은 나중에 다시 언급합니다.
+시나리오는 아래과 같이 총 4가지입니다. 모니터링은 Spring Admin과 Prometheus + Grafana 조합이고, 여기에 Service Discovery가 포함됩니다. Service Discovery 부분은 다음 포스팅에서 다루도록 하겠습니다.
 
 * Spring Admin
 * Eureka(Service Discovery) and Spring Admin
 * Prometheus and Grafana
 * Consul(Service Discovery), Prometheus and Grafana
-* Kubernetes and Istio with Prometheus and Grafana
 
 ### Spring Boot 2 Actuator
 우선 시작하기 전에 Spring Boot Actuator에 대해서 간략히 짚고 넘어가겠습니다.  
 Spring Boot Actuator는 Spring Boot Application에서 발생하는 여러가지 메트릭 정보를 모아서 제공해주는 기능입니다. 보통 JVM 상태, 트래픽, Cache, DB 상태, Health, dump, 환경등의 정보를 제공한다고 보면 될 것 같습니다.
-Spring Boot Actuator는 1.x 버전과 2.x 버전의 차이가 있는데, 좀 더 상세한 정보와 추가된 기능들이 있지만 가장 큰 부분은 Micrometer 정식 지원 부분이 아닌가 생각됩니다.  
+Spring Boot Actuator는 1.x 버전과 2.x 버전의 차이가 있는데, 좀 더 상세한 정보와 추가된 기능들이 있지만 가장 큰 부분은 Micrometer Core가 Spring Boot Actuator에 정식으로 포함된 부분이라고 볼 수 있습니다.  
 일단, Spring Boot Actuator 1.x와 2.x의 차이는 아래 블로그가 도움이 될 것 같네요.  
 https://www.baeldung.com/spring-boot-actuators
 

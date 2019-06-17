@@ -141,8 +141,9 @@ HTTP url에 Prometheus 서버 주소를 입력하고 **Save & Test** 버튼을 �
 
 ### Love Calculator 서비스 수정
 #### Dependency (pom.xml)
-Eureka와 Spring Boot Admin 관련 Dependency를 제거하고 Spring Boot Actuator에서 Prometheus 지원을 위해 Micrometer 관련 Dependency를 추가하겠습니다. 3개 서비스(love-calculator-service, love-calculator-consumer, yes-or-no-consumer)모두 동일하게 설정합니다. 
+Eureka와 Spring Boot Admin 관련 Dependency를 제거하고 Spring Boot Actuator에서 Prometheus 지원을 위해 Micrometer 관련 Dependency를 추가하겠습니다. Actuator에는 기본적으로 Micrometer Core가 포함되기 때문에 Prometheus 지원을 위한 Micrometer Registry만 포함하면 됩니다.
 
+3개 서비스(love-calculator-service, love-calculator-consumer, yes-or-no-consumer)모두 동일하게 설정합니다.  
 각 서비스의 pom.xml을 열고 다음과 같이 변경합니다. Spring Boot Admin과 Eureka는 주석처리 하고 Micrometer 및 Micrometer Prometheus 관련 Dependency를 추가합니다.
 ```xml
 <!--  for Spring Boot Admin
@@ -162,11 +163,6 @@ for Eureka -->
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
-
-<dependency>
-    <groupId>io.micrometer</groupId>
-    <artifactId>micrometer-core</artifactId>
 </dependency>
 
 <dependency>

@@ -48,7 +48,7 @@ properties에 spring-cloud.version을 추가하고, Dependency에 다음과 같�
 ```xml
 <properties>
     <java.version>12</java.version>
-    <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+    <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
 </properties>
 
 <dependencies>
