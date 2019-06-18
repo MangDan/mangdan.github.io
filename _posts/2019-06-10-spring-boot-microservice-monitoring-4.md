@@ -133,7 +133,7 @@ $ brew services start grafana
 ![](../assets/images/msa-monitoring-grafana-consul-prom-dashboard.png)
 
 ### 정리
-Consul에 대해서 자세히 다뤄보지를 못해서 이번에는 매끄럽게 연결되지 않는 부분이 있고, Spring Boot 쪽에 오류가 나는데(동작은 이상 없음), 이 부분은 나중에 따로 확인해봐야 할 것 같습니다. Consul도 가장 기본적인 Service Discovery 부분만 다뤄서 Eureka와 비교하기는 그렇지만, 멀티 데이터 센터 구성이나 확장, 자체 DNS 지원등은 상용 라이센스가 필요하기는 하지만 더 괜찮은 부분이라고 생각됩니다. Eureka와 같이 코드에서 관리하지 않기 때문에 이 부분도 관리에 있어서 장점이 될 수 있을 것 같네요. 물론 Eureka도 충분히 Service Discovery를 위한 훌륭한 솔루션입니다. 여하튼 Prometheus에서 공식적으로 Eureka Exporter를 하루빨리 지원하길 바랍니다.
+Consul에 대해서 자세히 다뤄보지를 못해서 이번에는 매끄럽게 연결되지 않는 부분이 있고, Spring Boot 쪽에 오류가 나는데(오류라기 보다는 연결 체크하는 과정에서의 Exception을 출력해주는 부분), 이 부분은 나중에 따로 확인해봐야 할 것 같습니다. Consul도 가장 기본적인 Service Discovery 부분만 다뤄서 Eureka와 비교하기는 그렇지만, 멀티 데이터 센터 구성이나 확장, 자체 DNS 지원등은 상용 라이센스가 필요하기는 하지만 더 괜찮은 부분이라고 생각됩니다. Eureka와 같이 코드에서 관리하지 않기 때문에 이 부분도 관리에 있어서 장점이 될 수 있을 것 같네요. 물론 Eureka도 충분히 Service Discovery를 위한 훌륭한 솔루션입니다. 여하튼 Prometheus에서 공식적으로 Eureka Exporter를 하루빨리 지원하길 바랍니다.
 
 지금까지 총 4회에 걸쳐서 Microservice Metrics 모니터링에 대해서 살펴봤습니다. 
 정리하자면, Spring Boot Admin은 Spring Boot 모니터링 도구로써 훌륭하지만, 다른 언어나 프레임워크의 경우는 직접 모니터링이 어렵기 때문에, 다양한 언어 혹은 프레임워크를 사용하는 경우라면 Prometheus + Grafana 조합이 더 좋다고 봅니다. MSA 모니터링에 있어서는 Service Discovery는 관리/운영에 있어서 당연히 필요한 부분이며, Eureka와 Consul 모두 훌룡한 Service Discovery 솔루션이긴 하지만, Prometheus에서 Eureka Exporter를 아직 공식 지원하지 않는 부분은 좀 아쉬운 부분인 것 같습니다.
