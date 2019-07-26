@@ -1,6 +1,6 @@
 ---
 title:  "[Oracle API Cloud Service] 게이트웨이 설치"
-date:   2019-07-25 15:40
+date:   2019-07-26 10:23
 tags: ["Oracle API Cloud Service"]
 ---
 
