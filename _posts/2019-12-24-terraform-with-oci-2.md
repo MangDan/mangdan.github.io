@@ -409,8 +409,6 @@ plan 결과가 예상한 계획과 일치하면, apply를 통해서 실제 인�
 $ terraform apply -var-file="env/$(terraform workspace show).tfvars"
 ```
 
-ocid1.dhcpoptions.oc1.ap-seoul-1.aaaaaaaa3bfzcrqkcykn2ggbnisuvvyxzxxcfb5nkm6d7xfqnm5xze5anjya
-
 오류없이 완료되면 아래와 같은 메시지를 볼 수 있다. 
 ```
 Apply complete! Resources: 30 added, 0 changed, 0 destroyed.

@@ -2,7 +2,7 @@
 title:  "[Terraform] Terraform with OCI 1탄"
 date:   2019-12-13 22:34
 tags: ["Terraform", "OCI", "Infrastructure as Code"]
----1
+---
 
 테라폼(Terraform)은 Hashicorp에서 개발한 인프라스트럭처 관리를 위한 오픈소스 소프트웨어로 인프라스트럭처를 코드로서 관리 및 프로비저닝하는 개념인 Ifrastructure as Code (IaC)를 지향하는 도구이다. AWS, Azure, GCP, OCI(Oracle Cloud Infrastructure)와 같은 다양한 클라우드 프로바이더를 지원하고 있는데, 그중에서 OCI 환경에서 테라폼을 사용하는 방법을 정리해봤다.
 
