@@ -450,7 +450,9 @@ OCI Console에 접속해서 실제 리소스가 생성된 것을 확인할 수 �
 
 
 ### run_tf.sh
-등록된 테라폼 workspace를 순차적으로 실행하기 위한 스크립트를 작성해봤다. 순차적일수 밖에 없는 이유는 workspace를 선택하고 실행하면 해당 workspace에 lock을 걸기 때문에 다른 workspace를 동시에 실행하기는 어렵다. (-lock=false 옵션을 사용하면 어떻게 될 거 같긴 하지만...)  
+등록된 테라폼 workspace들을 순차적으로 실행하기 위한 스크립트를 작성해봤다. 
+
+> 보통 workspace를 선택하고 실행하면 해당 workspace에 lock을 걸기 때문에 다른 workspace를 동시에 실행하기는 어렵다. 이럴땐 -lock=false 옵션을 주면 된다. 
 
 사용 방식은 다음과 같다.  
 1개의 workspace만 실행할 경우 (action은 init, plan, apply)
@@ -462,3 +464,5 @@ $ ./run_tf.sh {action} {workspace명}
 ```
 $ ./run_tf.sh {action}
 ```
+
+> 백그라운드로 실행하게 해서 병렬로 실행해봤더니, TLS handshake timeout이 발생한다. 각 OCI Tenancy별로 API 통신을 할 때 핸드쉐이크하는 과정이 있어서 그런거 같은데, wait을 주면 해결될 것 같긴 하지만, 하여튼 병렬로 실행하는 것은 좀 더 확인해봐야 할 거 같다.
