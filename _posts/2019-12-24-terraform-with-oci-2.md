@@ -1,6 +1,6 @@
 ---
 title:  "[Terraform] Terraform with OCI 2탄"
-date:   2019-12-13 10:39
+date:   2019-12-24 10:39
 tags: ["Terraform", "OCI", "Infrastructure as Code"]
 ---
 
@@ -449,4 +449,16 @@ OCI Console에 접속해서 실제 리소스가 생성된 것을 확인할 수 �
 ![](../assets/images/oci-tf-adw.png)
 
 
-다음 포스트에서는 쉘 스크립트와 테라폼 workspace를 활용해서 Multi Tenancy Provisioning을 해보도록 한다.
+### run_tf.sh
+등록된 테라폼 workspace를 순차적으로 실행하기 위한 스크립트를 작성해봤다. 순차적일수 밖에 없는 이유는 workspace를 선택하고 실행하면 해당 workspace에 lock을 걸기 때문에 다른 workspace를 동시에 실행하기는 어렵다. (-lock=false 옵션을 사용하면 어떻게 될 거 같긴 하지만...)  
+
+사용 방식은 다음과 같다.  
+1개의 workspace만 실행할 경우 (action은 init, plan, apply)
+```
+$ ./run_tf.sh {action} {workspace명}
+```
+
+등록된 모든 workspace를 실행할 경우 (action은 init, plan, apply)
+```
+$ ./run_tf.sh {action}
+```

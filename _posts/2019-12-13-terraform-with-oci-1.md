@@ -1,8 +1,8 @@
 ---
 title:  "[Terraform] Terraform with OCI 1탄"
-date:   2019-12-24 22:34
+date:   2019-12-13 22:34
 tags: ["Terraform", "OCI", "Infrastructure as Code"]
----
+---1
 
 테라폼(Terraform)은 Hashicorp에서 개발한 인프라스트럭처 관리를 위한 오픈소스 소프트웨어로 인프라스트럭처를 코드로서 관리 및 프로비저닝하는 개념인 Ifrastructure as Code (IaC)를 지향하는 도구이다. AWS, Azure, GCP, OCI(Oracle Cloud Infrastructure)와 같은 다양한 클라우드 프로바이더를 지원하고 있는데, 그중에서 OCI 환경에서 테라폼을 사용하는 방법을 정리해봤다.
 
@@ -33,6 +33,10 @@ API 서버를 Dev, Staging, Production 등의 환경으로 나누어 셋팅 후 
 > https://www.terraform.io/docs/providers
 
 테라폼을 사용하기 위해서는 테라폼과 관련된 요소나 용어를 이해해야 한다. 사용 자체는 어렵지 않지만, 이러한 개념이나 용어들이 생소해서 처음 시작할 때 좀 어려울 수 있다.
+
+다만 진입장벽이 있다는 것을 부정하기는 어려운데요.
+어떻게 하면 함께 진입장벽을 넘을 수 있을지는 고민인 부분입니다.
+
 
 ### HCL(Hachicorp Configuration Language)
 먼저 리소스 구성을 정의하기 위한 HCL(Hachicorp Configuration Language)이 있다. 일종의 설정 언어로 대부분의 작업이 이 HCL을 통해 구성 파일을 만드는 작업이라고 보면 된다. JSON 형식도 지원히지만, 일반적으로 JSON보다는 HCL을 더 선호하는 편인거 같다. 테라폼은 각 클라우드 벤더와 협업해서 제공하는 프로바이더 플러그인(golang으로 개발)을 통해 이러한 구성 파일을 검증하고 실행한다.
@@ -171,19 +175,20 @@ $ terraform plan -var-file=vars.tfvars # tfvars 파일을 사용한 경우
 ### 테라폼 적용 (Terraform apply)
 plan을 통해서 예상한 plan 결과를 확인하게 되면, 실제 반영을 해서 인프라의 정보를 구성 파일(.tf)의 정보와 일치되도록 실제 인프라에 반영하는데 이 과정이 apply 다. 실행 명령은 다음과 같다. apply를 실행하면 중간에 approve 하는 과정이 있는데, apply를 실행한 후에 plan 결과를 먼저 보여준 후 그 결과에 대해 승인(yes)해야 apply를 진행하게 된다.
 
-> apply를 실행할 때 다음 옵션을 통해 auto approve를 할 수 있습니다.  
-> ```
-> $ terraform apply --auto-approve
-> ```
-
 ```
 $ terraform apply
 
 $ terraform apply -var-file=vars.tfvars # tfvars 파일을 사용한 경우
 ```
 
+> 참고로 apply를 실행할 때 다음 옵션을 통해 auto approve를 할 수 있다.  
+> ```
+> $ terraform apply --auto-approve
+> ```
+
+
 ### workspace 생성/선택/삭제
-앞서 설명한 workspace를 생성, 목록, 선택, 삭제하는 명령어입니다. new 명령어로 프로젝트 폴더에서 workspace를 생성하면 **terraform.tfstate.d** 폴더가 자동으로 생성되며, 하위에 workspace 이름으로 폴더가 생성됩니다. 각 workspace 폴더안에 .tfstate 파일이 생성됩니다.
+앞서 설명한 workspace를 생성, 목록, 선택, 삭제하는 명령어다. new 명령어로 프로젝트 폴더에서 workspace를 생성하면 **terraform.tfstate.d** 폴더가 자동으로 생성되며, 하위에 workspace 이름으로 폴더가 생성된다. 각 workspace 폴더안에 .tfstate 파일이 생성된다.
 
 ```
 $ terraform workspace new <workspace 이름> # workspace 생성
@@ -197,4 +202,4 @@ $ terraform workspace delete <workspace 이름> # workspace 삭제
 $ terraform workspace show # 현재 선택된 workspace 보기
 ```
 
-다음 포스트에서는 실제 OCI 환경에서 다양한 리소스를 구성하는 부분을 직접 진행해 보고자 합니다. 현재 Module, Workspace등의 개념을 포함하고, 멀티 Tenancy, 멀티 Region에 동시에 구성할 수 있도록 작업중인데, 작업이 완료되면 바로 포스팅하도록 하겠습니다.
+다음 포스트에서는 실제 OCI 환경에서 다양한 리소스를 구성하는 부분을 직접 진행해 보고자 한다. 현재 Module, Workspace등의 개념을 포함하고, 멀티 Tenancy, 멀티 Region에 동시에 구성할 수 있도록 작업중인데, 작업이 완료되면 바로 포스팅하도록 하도록 하겠다.
