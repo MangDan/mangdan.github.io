@@ -11,17 +11,17 @@ Oracle API Gateway가 OCI (Oracle Cloud Infrastructure) 버전으로 새롭게 �
 ### Policy
 API Gateway를 사용하기 위한 기본 Policy는 다음과 같다. 여기서는 간단히 dan-group-12476 이라는 그룹과 dan-compartment-12476 이라는 Compartment를 만들고 Policy를 추가했다. 이 외에 API Gateway에서 Function을 사용할 것이기 때문에 functions-family를 사용할 수 있도록 관련 Policy를 추가했다.
 
-> Policy명: apigw-developers-manage-access  
-> Allow group dan-group-12476 to manage api-gateway-family in compartment dan-compartment-12476  
-> Allow group dan-group-12476 to manage virtual-network-family in compartment dan-compartment-12476  
-> Allow group dan-group-12476 to use functions-family in compartment dan-compartment-12476
+* **Policy명:** apigw-developers-manage-access  
+* Allow group dan-group-12476 to manage api-gateway-family in compartment dan-compartment-12476  
+* Allow group dan-group-12476 to manage virtual-network-family in compartment dan-compartment-12476  
+* Allow group dan-group-12476 to use functions-family in compartment dan-compartment-12476
 
 Dynamic Group으로 API Gateway에서 Function을 사용하도록 구성하는 경우는 다음과 같이 Dynamic Group을 추가한 후
-> Dynamic Group명: apigw-gateways-dyn-grp  
-> ALL {resource.type = 'ApiGateway', resource.compartment.id = 'ocid1.compartment.oc1..aaaaaaaafov7sichnuymoxmx34nclgckcxpsuthwnxvo7bh7w5hdufrzg2aa'}  
+* **Dynamic Group명:** apigw-gateways-dyn-grp  
+* ALL {resource.type = 'ApiGateway', resource.compartment.id = 'ocid1.compartment.oc1..aaaaaaaafov7sichnuymoxmx34nclgckcxpsuthwnxvo7bh7w5hdufrzg2aa'}  
 
 이렇게 Policy를 추가해주면 된다.
-> Allow dynamic-group apigw-gateways-dyn-grp to use functions-family in compartment dan-compartment-12476
+* Allow dynamic-group apigw-gateways-dyn-grp to use functions-family in compartment dan-compartment-12476
 
 ### Function 배포
 Function 배포는 아래 핸즈온 GitHub 문서를 참조한다.
