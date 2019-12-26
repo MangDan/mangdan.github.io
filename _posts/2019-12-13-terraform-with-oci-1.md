@@ -88,7 +88,7 @@ Windows에서의 설치는 아래 잘 정리된 블로그 페이지를 참조한
 
 > 프로바이더 정의라고 해서 꼭 provider.tf라고 이름을 지을 필요는 없다. 테라폼은 파일내에 정의된 Block Type을 사용하지 파일의 이름을 가지고 구성 내용을 판단하지 않는다. 하지만 파일의 확장자는 .tf로 지정해야 하고, 가시성을 위해서 어떤 동작을 하는지 알 수 있도록 파일 이름을 지정하는 것이 좋다.
 
-*** provider.tf***
+**provider.tf**
 ```terraform
 provider "oci" {
   tenancy_ocid     = "${var.tenancy_ocid}"
