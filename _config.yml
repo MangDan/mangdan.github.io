@@ -206,9 +206,9 @@ kramdown:
 
 # Collections
 collections:
-  ilbangbang:
-    output: true
-    permalink: /:collection/:path/
+  # ilbangbang:
+  #   output: true
+  #   permalink: /:collection/:path/
   cloud:
     output: true
     permalink: /:collection/:path/
@@ -240,17 +240,17 @@ defaults:
       layout: single
       author_profile: true
   # _ilbangbang
-  - scope:
-      path: ""
-      type: ilbangbang
-    values:
-      layout: single
-      read_time: false
-      author_profile: false
-      share: false
-      comments: false
-      sidebar:
-        nav: "ilbangbang"
+  # - scope:
+  #     path: ""
+  #     type: ilbangbang
+  #   values:
+  #     layout: single
+  #     read_time: false
+  #     author_profile: false
+  #     share: false
+  #     comments: false
+  #     sidebar:
+  #       nav: "ilbangbang"
   # _cloud
   - scope:
       path: ""
