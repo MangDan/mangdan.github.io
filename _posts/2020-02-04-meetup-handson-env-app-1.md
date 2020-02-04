@@ -631,7 +631,9 @@ username과 이메일로 실습 환경 조회
 ```json
 ==요청==
 {"username":"admin1@oracle.com","password":"welcome1"}
+```
 
+```json
 ==응답==
 {
     "access_token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjFAb3JhY2xlLmNvbSIsImV4cCI6MTU4MDc5OTI3MSwiaWF0IjoxNTgwNzk5MjYxfQ.WYVcf_TsT1fI_l5gZCxmf_PvpIlWzWY9-WpMlPIoq6yNtDBTHsnGqBt5tpwMtbHNoMcbiUCFKbNCXWBYcnqpKw",
@@ -647,7 +649,9 @@ username과 이메일로 실습 환경 조회
 ```json
 ==요청==
 {"username":"admin1@oracle.com","password":"welcome1"}
+```
 
+```json
 ==응답==
 {
     "access_token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjFAb3JhY2xlLmNvbSIsImV4cCI6MTU4MDgwMTIzNSwiaWF0IjoxNTgwNzk5NDM1fQ.y6zKMNo1ii6NkGEnSB96izwYpqzKB_KhxsxSuZnKwXhR3OIfr63X3YZ9C6IzTjEpsn9e_JaTAANLkFO9hf50Ww",
@@ -663,7 +667,9 @@ Access Token으로 부터 디코딩된 Claim 정보 획득
 ```json
 ==요청==
 {"username":"admin1@oracle.com"}
+```
 
+```json
 ==응답==
 {"sub":"admin1@oracle.com","exp":1580801235,"iat":1580799435}
 ```
@@ -697,7 +703,6 @@ Backend의 경우는 크게 어려움 없이 진행했지만, 몇가지 진행�
 ```java
 if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
     jwtToken = requestTokenHeader.substring(7);
-
 
     try {
         username = jwtTokenUtil.getUsernameFromToken(jwtToken);
