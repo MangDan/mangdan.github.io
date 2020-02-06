@@ -1,5 +1,5 @@
 ---
-title:  "GCP (Google Cloud Platform Free Tier 계정 소개"
+title:  "GCP (Google Cloud Platform) Free Tier 계정 소개"
 date:   2020-02-03 10:39
 tags: ["GCP", "Free Tier", "Always Free Tier"]
 ---
