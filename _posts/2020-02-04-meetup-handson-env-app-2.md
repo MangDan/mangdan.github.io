@@ -231,7 +231,7 @@ export default router
 Vuex를 통해서 상태(데이터)관리를 위한 내용은 store 폴더안에 작성한다. Vuex는 state, getters, mutations, actions로 이뤄져 있는데 간단히 소개한다.
 
 #### State
-* 컴포넌트간 공유를 위한 데이터 속성을 의미하며, Vue 컴포넌트에서 접근 시 <code>{{ $store.state.statevalue }}</code> 와 같이 접근한다. 보통 메모리에 저장이 되기 때문에 페이지 리프레시가 되면 데이터가 사라진다. 토큰을 계속 들고 있어야 하므로, 여기서는 가져온 토큰을 sessionStorage에 담았다.
+* 컴포넌트간 공유를 위한 데이터 속성을 의미하며, Vue 컴포넌트에서 접근 시 ***{{ $store.state.statevalue }}*** 와 같이 접근한다. 보통 메모리에 저장이 되기 때문에 페이지 리프레시가 되면 데이터가 사라진다. 토큰을 계속 들고 있어야 하므로, 여기서는 가져온 토큰을 sessionStorage에 담았다.
 
 ```json
 state: {
@@ -245,7 +245,7 @@ state: {
 
 #### Getters
 * 로직을 추가한 State를 가져오기 위해 사용, 보통 각 컴포넌트에서 computed(계산된 값) 형태로 사용될 수 있으나, Getters에 공통으로 적용하면, 실제 컴포넌트에서 사용할 때 간소화 해서 사용할 수 있다. getTokenExpiresIn이라는 getters를 사용하는데, 토큰의 남은 시간을 계산해서 결과를 반환한다.
-getters는 <code>{{ $store.getters.getTokenExpiresIn }}</code> 와 같은 방법으로 접근한다.
+getters는 ***{{ $store.getters.getTokenExpiresIn }}*** 와 같은 방법으로 접근한다.
 
 ```json
 getters: {
