@@ -414,15 +414,17 @@ EnvList 컴포넌트의 최종 결과 화면은 다음과 같다. 실습 환경 
 #### EnvList > data
 컴포넌트에서 사용하는 데이터를 담을 변수를 선언, Vue 객체가 내부적으로 사용하게 된다. data에 정의된 값에 접근할 때는 스크립트에서 접근할 때와 template(html)에서 접근하는 방식이 다르다.
 
-* 스크립트에서 접근은 this를 사용한다.
-```
-this.errmsg1
-```
+* 스크립트에서 접근은 this를 사용한다.  
 
-* template에서 접근
-```
- {{ errmsg1 }}
-```
+  ```
+  this.errmsg1
+  ```
+
+* template에서 접근  
+
+  ```
+  {{ errmsg1 }}
+  ```
 
 headers 데이터는 v-data-table에서 사용하며, text는 컬럼명, value는 가져온 데이터 객체의 키 값(JSON 객체일 경우 JSON 객체의 키), align은 정렬을 의미한다. v-data-table에서 items에 envs를 사용하므로, 빈 envs를 배열로 선언해준다.
 
