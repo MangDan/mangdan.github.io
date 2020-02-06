@@ -559,6 +559,7 @@ $ mvn spring-boot:run
 #### REST 서비스
 실습 환경 리스트 반환
 > http://localhost:8000/api/v1/meetup/envs?sort=num,asc
+
 ```json
 ==응답==
 [{"num":1,"osuser":"user1","username":"오라클","email":"oracle123@oracle.com","tenant":"meetup101","region":"ap-seoul-1","cloud_account":"oracle.testa1@gmail.com","cloud_account_pw":"Welcome123##","handson_doc_url":"https://github.com/MangDan/meetup-200118-iac","key_download_url":"https://objectstorage.ap-seoul-1.oraclecloud.com/p/q5QvhgdGpV5hakDgZXzjS-acLFR8oa3knciiVSS8CPg/n/apackrsct01/b/bucket-20190614-1639/o/sshkeys.zip","env_ip":"132.145.82.236","env_name":"handson-1"},{"num":2,"osuser":"user2","username":"아무게","email":"a@a.com","tenant":"meetup102","region":"ap-seoul-1","cloud_account":"datatwin2019@gmail.com","cloud_account_pw":"Welcome123##","handson_doc_url":"https://github.com/MangDan/meetup-200118-iac","key_download_url":"https://objectstorage.ap-seoul-1.oraclecloud.com/p/q5QvhgdGpV5hakDgZXzjS-acLFR8oa3knciiVSS8CPg/n/apackrsct01/b/bucket-20190614-1639/o/sshkeys.zip","env_ip":"132.145.82.236","env_name":"handson-1"},{"num":3,"osuser":"user3","username":null,"email":null,"tenant":"meetup103","region":"ap-seoul-1","cloud_account":"datatwin2020@gmail.com","cloud_account_pw":"Welcome123##","handson_doc_url":"https://github.com/MangDan/meetup-200118-iac","key_download_url":"https://objectstorage.ap-seoul-1.oraclecloud.com/p/q5QvhgdGpV5hakDgZXzjS-acLFR8oa3knciiVSS8CPg/n/apackrsct01/b/bucket-20190614-1639/o/sshkeys.zip","env_ip":"132.145.82.236","env_name":"handson-1"}
@@ -568,6 +569,7 @@ $ mvn spring-boot:run
 
 실습자가 환경 요청 (이름과 이메일 업데이트)
 > http://140.238.20.170:8000/api/v1/meetup/env
+
 ```json
 ==요청/응답==
 {
@@ -588,6 +590,7 @@ $ mvn spring-boot:run
 
 번호로 실습 환경 조회
 > http://140.238.20.170:8000/api/v1/meetup/env/3
+
 ```json
 ==응답==
 {
@@ -608,6 +611,7 @@ $ mvn spring-boot:run
 
 username과 이메일로 실습 환경 조회
 > http://140.238.20.170:8000/api/v1/meetup/env?username=홍길동&email=gildong.hong@oracle.com
+
 ```json
 ==응답==
 {
@@ -628,6 +632,7 @@ username과 이메일로 실습 환경 조회
 
 관리자 등록
 > http://140.238.20.170:8000/api/auth/register
+
 ```json
 ==요청==
 {"username":"admin1@oracle.com","password":"welcome1"}
@@ -646,6 +651,7 @@ username과 이메일로 실습 환경 조회
 
 관리자 로그인
 > http://localhost:8000/api/auth/login
+
 ```json
 ==요청==
 {"username":"admin1@oracle.com","password":"welcome1"}
@@ -664,6 +670,7 @@ username과 이메일로 실습 환경 조회
 
 Access Token으로 부터 디코딩된 Claim 정보 획득
 > http://localhost:8000/api/auth/claims
+
 ```json
 ==요청==
 {"username":"admin1@oracle.com"}
@@ -676,6 +683,7 @@ Access Token으로 부터 디코딩된 Claim 정보 획득
 
 실습환경 신규/업데이트/컬럼 업데이트
 > http://localhost:8000/api/v1/admin/meetup/env/reset
+
 ```json
 ==요청/응답==
 {
@@ -694,12 +702,14 @@ Access Token으로 부터 디코딩된 Claim 정보 획득
 }
 ```
 
-Backend의 경우는 크게 어려움 없이 진행했지만, 몇가지 진행하면서 부딪혔던 문제들은 다음과 같다.
-1. DAO에서 일부 값을 넘기지 않은 필드 (null)에 대해서 업데이트 시 항목에서 제외하고 싶은데...
+### Problems & How to...
+백엔드의 경우는 크게 어려움 없이 진행했지만, 몇가지 해결안된 문제가 있다.
+1. DAO에서 일부 값을 넘기지 않은 필드 (null)에 대해서 업데이트시 항목에서 제외하고 싶은데...
 > updatable = false, insertable = false 와 같이 주면 되겠지만, 경우에 따라서 값이 있을 경우와 없을 경우가 있는데 값이 없을 경우 (null 혹은 빈 값)에 JPA 업데이트에서 해당 컬럼을 제외하려면 어떻게 해야 하는건지 모르겠다. 직접 커스텀 쿼리를 만들어서 하면 될까? 
 
 2. filter에서 발생하는 에러에 메시지를 달아서 클라이언트로 전달하는 방법
 > JwsRequestFilter.java 에서 아래와 같이 Catch에서 Throw Exception("오류 이유")를 하고 싶은데, 클라이언트로 전달이 안된다. https://stackoverflow.com/questions/44040703/spring-how-to-make-a-filter-throw-a-custom-exception ==> 여기서는 Filter에서 처리는 어렵고, 오직 Controller와 Service에서 처리만 가능하다고 하는데... 
+
 ```java
 if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
     jwtToken = requestTokenHeader.substring(7);
@@ -713,7 +723,8 @@ if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
     }
 ...
 ```
-Filter에서 발생하는 오류는 WebSecurityConfig에서 자동으로 JwtAuthenticationEntryPoint로 전달되고 여기서 응답으로 오류를 발생시키는데, 중요한건 Filter에서 발생한 오류의 정보를 JwtAuthenticationEntryPoint로 넘기는 방법을 찾지 못했다.
+Filter에서 발생하는 오류는 WebSecurityConfig에서 자동으로 JwtAuthenticationEntryPoint로 전달되고 여기서 응답으로 오류를 발생시키는데, 중요한건 Filter에서 발생한 오류의 정보를 JwtAuthenticationEntryPoint로 넘겨야 하는데, 아직 해결 방법을 찾지 못했다.
+
 ```java
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
