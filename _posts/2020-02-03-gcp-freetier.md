@@ -1,7 +1,7 @@
 ---
 title:  "GCP (Google Cloud Platform Free Tier 계정 소개"
 date:   2020-02-03 10:39
-tags: ["GCP"]
+tags: ["GCP", "Free Tier", "Always Free Tier"]
 ---
 
 Google Cloud Platform (이하 GCP)는 두 가지 무료 정책이 있다. 간단히 소개한다.
