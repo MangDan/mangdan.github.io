@@ -262,7 +262,7 @@ getters: {
 ```
 
 #### MapGetters
-* Getters에서 ```{{ $store.getters.getTokenExpiresIn }}``` 와 같이 사용하는 부분을 간략히 하고자 할 때 사용한다. 각 Vue 컴포넌트에서 computed에 mapState를 아래와 같이 사용하면, 실제 접근 시 ```{{ getTokenExpiresIn }}``` 만으로도 접근할 수 있다.
+* Getters에서 ***{{ $store.getters.getTokenExpiresIn }}*** 와 같이 사용하는 부분을 간략히 하고자 할 때 사용한다. 각 Vue 컴포넌트에서 computed에 mapState를 아래와 같이 사용하면, 실제 접근 시 ***{{ getTokenExpiresIn }}*** 만으로도 접근할 수 있다.
 
 ```json
 computed: {
