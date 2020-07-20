@@ -66,7 +66,7 @@ OCI에서는 Compartment 라는 개념이 있습니다. Compute, Network, Storag
 * DESCRIPTION : OKE-Policy
 * Policy Versioning : KEEP POLICY CURRENT
 * Policy Statements
-  * Allow service OKE to manage all-resources in compartment OKE
+  > Allow service OKE to manage all-resources in compartment OKE
 
 ### OKE Cluster 생성
 좌측 상단의 햄버거 메뉴를 클릭한 후 다음 순서대로 클릭합니다.
