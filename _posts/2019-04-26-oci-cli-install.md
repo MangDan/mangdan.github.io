@@ -69,10 +69,12 @@ User OCID와 Tenancy OCID는 다음과 같이 확인할 수 있습니다.
 
 User OCID
 > 우측 상단 사용자 아이콘 클릭 -> 프로파일 밑 사용자 아이디 선택 (oracleidentitycloudservice로 시작) -> OCID 복사 -> terminal에 입력 후 엔터
+
 ![](../assets/images/oci-user-ocid.png)
 
 Tenancy OCID
 > 우측 상단 사용자 아이콘 클릭 -> Tenancy 선택 -> OCID 복사 -> terminal에 입력 후 엔터
+
 ![](../assets/images/oci-tenancy-ocid.png)
 
 Region  
