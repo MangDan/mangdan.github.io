@@ -25,13 +25,7 @@ Set-ExecutionPolicy RemoteSigned
 powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.ps1'))"
 ```
 
-설치가 시작되면 설치 경로를 입력하라고 나오는데, 기본 경로로 설치해도 되지만, 여기서는 다음과 같이 임의의 경로로 지정해서 설치했습니다.
-```
-* /Users/DonghuKim/Software/oracle/oci-cli
-* /Users/DonghuKim/oracle/oci-cli-bin
-* /Users/DonghuKim/oracle/oci-cli-bin/oci-cli-scripts
-```
-
+설치가 시작되면 설치 경로를 입력하라고 나오는데, 기본 경로로 설치합니다. (계속해서 엔터)  
 설치가 완료되면 bash_profile에 다음과 같은 내용이 추가됩니다.  
 macOS 환경 기준이므로, Windows의 경우는 확인이 필요합니다.
 ```
@@ -49,30 +43,51 @@ oci setup config
 ```
 
 oci setup을 위해 몇가지 정보가 필요합니다.  
-첫 번째는 oci config 저장 위치입니다. 저는 기본 경로로 지정했습니다.
+첫 번째는 oci config 저장 위치입니다. 기본 위치로 선택 (엔터)
 ```
 /Users/{name}/.oci
 ```
 
-두 번째는 User OCID와 Tenancy OCID가 필요합니다.  
-Oracle Cloud Console에서 본인 계정에 대한 OCID와 Tenancy OCID를 확인한 후 동일하게 입력합니다.
+두 번째는 User OCID와 Tenancy OCID가 필요합니다. 이 정보는 OCI Console에 로그인하여 확인합니다. 먼저 OCI에 로그인합니다. 아래 URL을 통해서 Seoul Region으로 접속합니다. 
+```
+https://console.ap-seoul-1.oraclecloud.com
+```
+
+OCI Tenancy 이름을 입력하고 Continue 클릭
+![](../assets/images/oci_login_tenancy.png)
+
+Single Sign-On (SSO) 아래 Continue 버튼 클릭
+![](../assets/images/oci-console-signin.png)
+
+사용자 이름과 비밀번호 입력 후 사인인 버튼 클릭
+![](../assets/images/oci-console-signin-2.png)
+
+OCI Console Home
+![](../assets/images/oci-console-home.png)
+
+User OCID와 Tenancy OCID는 다음과 같이 확인할 수 있습니다.
 
 User OCID
+> 우측 상단 사용자 아이콘 클릭 -> 프로파일 밑 사용자 아이디 선택 (oracleidentitycloudservice로 시작) -> OCID 복사 -> terminal에 입력 후 엔터
 ![](../assets/images/oci-user-ocid.png)
 
 Tenancy OCID
+> 우측 상단 사용자 아이콘 클릭 -> Tenancy 선택 -> OCID 복사 -> terminal에 입력 후 엔터
 ![](../assets/images/oci-tenancy-ocid.png)
 
-세 번째는 OCI 사용자 계정에 OCI API를 사용하기 위한 Public Key를 입력해야 합니다.
+Region  
+> ap-seoul-1
 
-ssh-keygen으로 생성합니다.
-```
-ssh-keygen -t rsa
-```
-![](../assets/images/ssh-keygen2.png)
+마지막으로 API Signing RSA key 생성을 위해 Y 를 입력 후 엔터를 입력합니다.
+생성된 Public Key의 내용을 복사해서 OCI Console의 API Key에 Public Key를 등록합니다.
 
-Public Key의 내용을 복사해서 OCI Console의 API Key에 Public Key를 등록합니다.
+API Key 등록
+> 우측 사용자 아이콘 클릭 -> 좌측 API 키 선택 -> 공용 키 파일 선택 (~/.oci/oci_api_key_public.pem) -> 추가
+
 ![](../assets/images/oci-add-public-key-for-api.png)
+
+ocicli 테스트
+> oci os ns get
 
 여기까지 OCI-CLI 설치 및 환경 구성을 모두 마쳤습니다.  
 OCI-CLI를 통해서 간단하게는 Oracle Object Storage에 파일을 업로드 하는 것을 포함해서, 전반적인 Infra 관리를 할 수 있습니다.
