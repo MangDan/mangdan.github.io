@@ -20,7 +20,7 @@ OCI에서 제공하는 OKE의 Cluster 생성과 Cluster 접속을 위한 kubectl
 우선 필요한 준비물은 다음과 같습니다.
 
 * Oracle Cloud Infrastructure 계정 - 처음 가입하면 300$ 상당의 Trial을 신청할 수 있습니다.
-* oci-cli - 설치는 이 전 포스트인 [[Oracle Cloud] OCI-CLI 설치](/oci-cli-install)를 참고합니다.
+* oci-cli - 설치는 [[Oracle Cloud] OCI-CLI 설치](/oci-cli-install)를 참고합니다.
 
 ### Login OCI Console
 먼저 OCI에 로그인합니다. 아래 URL을 통해서 Seoul Region으로 접속합니다. Region은 로그인 한 후 변경할 수 있습니다.
@@ -105,7 +105,7 @@ OCI에서는 Compartment 라는 개념이 있습니다. Compute, Network, Storag
 
 ![](../assets/images/oci-oke-access-cluster.png)
 
-> oci-cli가 설치되어 있어야 합니다. [[Oracle Cloud] OCI-CLI 설치](/2019-04-26-oci-cli-install.md)를 포스트를 참고하세요.
+> oci-cli가 설치되어 있어야 합니다. [[Oracle Cloud] OCI-CLI 설치](/oci-cli-install)를 참고하세요.
 
 ```
 mkdir -p $HOME/.kube
