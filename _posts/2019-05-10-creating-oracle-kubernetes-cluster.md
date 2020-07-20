@@ -115,24 +115,15 @@ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.ap-seoul-1.aaaaa
 export KUBECONFIG=$HOME/.kube/config
 ```
 
-### kubectl 과 kubernetes Dashboard에서 OKE Cluster 접속 확인
-
-OKE Cluster의 노드 정보를 보여줍니다.
+OKE Cluster 정보를 보여줍니다. 정상적으로 설정되면 Cluster 정보를 출력합니다.
 ```
-$ kubectl get nodes
+$ kubectl cluster-info
 ```
 
-OKE Cluster에 대한 Dashboard를 다음과 같이 실행해서 로컬에서 구동합니다. 
-```
-$ kubectl proxy
-```
+### (선택) kubernetes Dashboard 구성
+OKE에서 Kubernetes Dashboard를 설치하여 구성하는 가이드는 아래 페이지를 참고합니다. 
 
-다음 URL로 접속하면
-```
-http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
-```
-kubeconfig를 선택하고 생성했던 kubeconfig 파일을 선택한 후 **SIGN IN** 버튼을 클릭합니다.
-![](../assets/images/oci-oke-kube-proxy-dashboard-1.png)
+> https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengstartingk8sdashboard.htm
 
 OKE Cluster에 연결된 Kubernetes Dashboard입니다.
 ![](../assets/images/oci-oke-kube-proxy-dashboard-2.png)
