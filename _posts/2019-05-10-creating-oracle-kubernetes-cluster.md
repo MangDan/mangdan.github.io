@@ -103,9 +103,9 @@ OCI에서는 Compartment 라는 개념이 있습니다. Compute, Network, Storag
 생성한 oke-cluster1을 클릭하여 상세 화면으로 이동합니다.
 **Access Kubeconfig** 라는 버튼이 있습니다. 클릭을 해보면 oci-cli를 활용해서 kubeconfig 파일을 생성하는 단계가 나옵니다. 순서대로 실행합니다.
 
-![](../assets/images/oci-oke-access-cluster.png)
-
 > oci-cli가 설치되어 있어야 합니다. [[Oracle Cloud] OCI-CLI 설치](/oci-cli-install)를 참고하세요.
+
+![](../assets/images/oci-oke-access-cluster.png)
 
 ```
 mkdir -p $HOME/.kube
