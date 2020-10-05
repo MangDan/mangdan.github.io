@@ -35,6 +35,7 @@ org.apache.kafka.common.security.plain.PlainLoginModule required username="{테�
 Kafka 접속 정보에서 필요한 정보를 얻을 수 있지만, 자신의 계정과 연관된 AUTH_TOKEN은 만들어줘야 한다. 다음 순서로 토큰을 생성한다.
 
 > 우측 상단 프로파일 > 계정 선택 > 인증 토큰 > 토큰 생성 > 복사
+
 ![](../assets/images/oci-oss-create-token.png)
 
 ### Flink 환경 구성
@@ -96,37 +97,42 @@ Flink는 최신 버전인 1.11.2 버전을 사용했다. 아래와 같이 Depend
 pom.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.app</groupId>
-  <artifactId>oss-kafka-flink-consumer</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <flink.version>1.11.2</flink.version>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.flink</groupId>
-      <artifactId>flink-connector-kafka-0.11_2.11</artifactId>
-      <version>${flink.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.flink</groupId>
-      <artifactId>flink-java</artifactId>
-      <version>${flink.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.flink</groupId>
-      <artifactId>flink-streaming-java_2.11</artifactId>
-      <version>${flink.version}</version>
-    </dependency>
-  </dependencies>
-  <build>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.example.app</groupId>
+	<artifactId>oss-kafka-flink-consumer</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<flink.version>1.11.2</flink.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-connector-kafka-0.11_2.11</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-java</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-streaming-java_2.11</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.2.0</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -252,7 +258,7 @@ pom.xml
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<!-- Configure the jar plugin to add the main class as a manifest entry -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -308,6 +314,7 @@ pom.xml
 		</profile>
 	</profiles>
 </project>
+
 ```
 
 다음은 OSS 접속을 위한 설정 파일을 작성한다. OSS 스트림풀에서 확인한 Kafka 접속 정보를 활용한다.
