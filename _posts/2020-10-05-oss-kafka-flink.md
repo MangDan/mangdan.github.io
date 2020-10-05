@@ -508,7 +508,7 @@ pom.xml
 
 실행 시 5건의 텍스트 메시지를 OSS로 전송한다.
 
-```Java
+```java
 @SuppressWarnings("all")
 public class CompatibleProducer {
 
