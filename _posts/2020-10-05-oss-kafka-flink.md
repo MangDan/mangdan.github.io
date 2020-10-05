@@ -331,7 +331,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 
 Java로 작성된 코드이며, FlinkKafkaConsumer로 스트림(토픽)으로 메시지를 수신하여 출력만 하는 역할을 하는 간단한 코드이다.
 
-```Java
+```java
 @SuppressWarnings("all")
 public class FlinkTestConsumer {
 
