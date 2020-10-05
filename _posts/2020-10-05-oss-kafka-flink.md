@@ -602,6 +602,6 @@ Flink Console에서 Task Managers > Stdout으로 이동하여 소비한 메시�
 ![](../assets/images/oci-oss-flink-stdout.png)
 
 
-### 참고한 블로그
+### 참고
 * https://blogs.oracle.com/developers/oracle-streaming-service-producer-consumer
 * https://github.com/igfasouza/OSS_examples
