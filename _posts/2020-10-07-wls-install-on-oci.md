@@ -28,7 +28,7 @@ WebLogic 12c (12.2.1.4)는 아래 링크를 통해 다운로드 받을 수 있�
 #### 서버에 업로드
 업로드 할 디렉토리 생성
 ```
-ssh -i ~/.ssh/id_rsa opc@132.145.90.57 mkdir -p /home/opc/install
+ssh -i ~/.ssh/id_rsa opc@{public-ip} mkdir -p /home/opc/install
 ```
 
 설치 파일 업로드
