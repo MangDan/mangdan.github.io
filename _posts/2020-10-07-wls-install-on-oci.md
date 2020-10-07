@@ -38,7 +38,7 @@ $ scp -i ~/.ssh/id_rsa jdk-8u261-linux-i586.tar.gz opc@{public-ip}:/home/opc/ins
 $ scp -i ~/.ssh/id_rsa fmw_12.2.1.4.0_wls_lite_Disk1_1of1.zip opc@{public-ip}:/home/opc/install/
 ```
 
-### 설치 환경 준비 1
+### 설치 환경 준비
 서버 OS에 WebLogic을 설치할 사용자 및 그룹을 생성한다. 그리고 설치를 위한 디렉토리 생성, 디렉토리와 업로드한 설치 파일에 대한 소유자 및 권한 변경, 압축 해제까지 진행한다.
 
 #### OS 사용자 생성
