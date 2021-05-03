@@ -205,22 +205,6 @@ kramdown:
   enable_coderay: false
 
 # Collections
-collections:
-  # ilbangbang:
-  #   output: true
-  #   permalink: /:collection/:path/
-  cloud-oci:
-    output: true
-    permalink: /:collection/:path/
-  cloud:
-    output: true
-    permalink: /:collection/:path/
-  cloud-native:
-    output: true
-    permalink: /:collection/:path/
-  api:
-    output: true
-    permalink: /:collection/:path/
 
 # Defaults
 defaults:

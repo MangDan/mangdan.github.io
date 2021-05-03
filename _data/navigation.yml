@@ -1,9 +1,9 @@
 # main links
 main:
-  - title: "Cloud (OCI)"
-    url: /cloud-oci/
   - title: "Posts"
     url: /
+  - title: "Categories"
+    url: /tags/
   - title: "Tags"
     url: /tags/
   # - title: "Let's Ilbangbang"
