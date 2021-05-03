@@ -3,6 +3,8 @@ permalink: "/cloud/oci/"
 title:  "[Oracle Cloud] OCI-CLI 설치"
 date:   2019-04-26 08:00
 tags: ["Oracle Cloud"]
+sort_by: date # (default) title
+sort_order: reverse # forward (default), reverse
 ---
 
 OCI-CLI는 Oracle Cloud Infrastructure 관리 기능을 제공하는 CLI 도구입니다.  
