@@ -2,8 +2,6 @@
 main:
   - title: "Posts"
     url: /
-  - title: "Categories"
-    url: /tags/
   - title: "Tags"
     url: /tags/
   # - title: "Let's Ilbangbang"

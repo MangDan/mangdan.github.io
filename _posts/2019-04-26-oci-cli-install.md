@@ -1,7 +1,6 @@
 ---
 title:  "[Oracle Cloud] OCI-CLI 설치"
 date:   2019-04-26 08:00
-categories: [ cloud-oci ]
 tags: ["Oracle Cloud"]
 ---
 
