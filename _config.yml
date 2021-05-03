@@ -209,6 +209,9 @@ collections:
   # ilbangbang:
   #   output: true
   #   permalink: /:collection/:path/
+  cloud-oci:
+    output: true
+    permalink: /:collection/:path/
   cloud:
     output: true
     permalink: /:collection/:path/
@@ -253,8 +256,8 @@ defaults:
   #       nav: "ilbangbang"
   # _cloud
   - scope:
-      path: ""
-      type: cloud
+      path: "/oci/"
+      type: cloud-oci
     values:
       layout: single
       author_profile: true
