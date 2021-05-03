@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Cloud (OCI)"
+    url: /
   - title: "Posts"
     url: /
   - title: "Tags"
