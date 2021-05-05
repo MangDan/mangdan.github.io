@@ -4,7 +4,7 @@ date:   2021-05-05 22:00
 tags: ["OCI", "OKE (Oracle Kubernetes Engine)"]
 ---
 
-Oracle Cloud Infrastructure(이하 OCI)의 관리형 쿠버네티스 서비스인 Oracle Kubernetes Engine (이하 OKE)에서 OCI Block Volume Storage를 Persistent Volume으로 사용하는 방법에 대해 포스팅한다.
+Oracle Cloud Infrastructure(이하 OCI)의 관리형 쿠버네티스 서비스인 Oracle Kubernetes Engine (이하 OKE)에서 OCI Block Volume Storage를 Persistent Volume으로 사용하는 방법을 정리했다.
 
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
@@ -102,7 +102,7 @@ spec:
 $ kubectl create -f nginx-pod.yaml
 ```
 
-***PVC 확인***
+***PVC 확인***  
 STATUS가 Bound 상태로 변했다.
 ```
 $ kubectl get pvc
