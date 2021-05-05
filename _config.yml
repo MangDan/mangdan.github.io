@@ -239,36 +239,6 @@ defaults:
   #     sidebar:
   #       nav: "ilbangbang"
   # _cloud
-  - scope:
-      path: "/oci/"
-      type: cloud-oci
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      comments: true
-      related: true
-  - scope:
-      path: ""
-      type: cloud-native
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      comments: true
-      related: true
-  - scope:
-      path: ""
-      type: api
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      comments: true
-      related: true
 
 # Sass/SCSS
 sass:
