@@ -206,14 +206,6 @@ kramdown:
 
 # Collections
 collections:
-  ilbangbang:
-    output: true
-    permalink: /:collection/:path/
-  cloud:
-    output: true
-    permalink: /:collection/:path/
-    layout: single
-    author_profile: true
 
 # Defaults
 defaults:
