@@ -205,6 +205,15 @@ kramdown:
   enable_coderay: false
 
 # Collections
+collections:
+  ilbangbang:
+    output: true
+    permalink: /:collection/:path/
+  cloud:
+    output: true
+    permalink: /:collection/:path/
+    layout: single
+    author_profile: true
 
 # Defaults
 defaults:
