@@ -1,5 +1,5 @@
 ---
-title:  "Oracle Cloud Infrastructure (OCI)에 WebLogic 12c 설치하기"
+title:  "[OCI] OCI에 WebLogic 12c 설치"
 date:   2020-10-07 10:51
 tags: ["weblogic", "OCI"]
 ---

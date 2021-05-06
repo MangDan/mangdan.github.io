@@ -1,5 +1,5 @@
 ---
-title:  "Oracle Cloud Kubernetes Engine (OKE)에서 Persistent Volume 사용하기"
+title:  "[OCI] Kubernetes Engine (OKE)에서 Persistent Volume 사용"
 date:   2021-05-05 22:00
 tags: ["OCI", "OKE (Oracle Kubernetes Engine)"]
 ---

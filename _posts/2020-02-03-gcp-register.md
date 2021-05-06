@@ -1,5 +1,5 @@
 ---
-title:  "GCP (Google Cloud Platform) Free Tier 계정 생성"
+title:  "[GCP] Free Tier 계정 생성"
 date:   2020-02-03 10:39
 tags: ["GCP"]
 ---

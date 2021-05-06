@@ -1,5 +1,5 @@
 ---
-title:  "[OCI Container Engine] Kubernetes Cluster 생성하기"
+title:  "[OCI] Kubernetes Cluster 생성하기"
 date:   2019-05-08 13:25
 tags: ["Oracle Cloud", "Cloud Native", "Kubernetes"]
 ---

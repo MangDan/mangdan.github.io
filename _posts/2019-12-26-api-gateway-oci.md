@@ -1,5 +1,5 @@
 ---
-title:  "API Gateway with Function on OCI"
+title:  "[OCI] API Gateway with Function"
 date:   2019-12-26 10:39
 tags: ["API Gateway", "OCI", "Function"]
 ---

@@ -1,5 +1,5 @@
 ---
-title:  "[Terraform] Terraform with OCI 1탄"
+title:  "[OCI] Terraform with OCI 1탄"
 date:   2019-12-13 22:34
 tags: ["Terraform", "OCI", "Infrastructure as Code"]
 ---
