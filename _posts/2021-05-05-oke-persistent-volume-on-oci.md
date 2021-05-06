@@ -9,12 +9,12 @@ Oracle Cloud Infrastructure(이하 OCI)의 관리형 쿠버네티스 서비스�
 > 본 블로그의 모든 포스트는 **macOS** 환경에서 테스트 및 작성되었습니다.  
 
 ### OCI OKE Volume Plugins
-OKE Cluster에서 Block Volume Storage를 연결하기 위한 플러그인으로 CSI(Container Storage Interface) Volume Plugin과 FlexVolume Plugin을 지원하고 있다. 작년까지는 FlexVolume Plugin만 지원했지만 현재는 CSI Volume Plugin도 지원하고 있다.
-FlexVolume Plugin은 CSI가 나오기 전의 out-of-tree volume plugin (플러그인 소스 코드를 쿠버네티스 레파지토리에 추가하지 않고도 Custom Plugin을 만들 수 있는 방식)이다. CSI는 메소스, 도커스웜등의 여러 컨테이너 오케스트레이션 커뮤니티들이 협력하여 스토리지 관리를 위한 공통 인터페이스이다. 쿠버네티스의 경우 1.3 이후부터 CSI를 지원하기 시작했다.
+OKE Cluster에서는 Block Volume Storage를 연결하기 위한 플러그인으로 CSI(Container Storage Interface) Volume Plugin과 FlexVolume Volume Plugin을 지원한다.
+FlexVolume Volume Plugin은 CSI가 나오기 전의 out-of-tree(플러그인 소스 코드를 쿠버네티스 레파지토리에 추가하지 않고도 Custom Plugin을 만들 수 있는 방식) Volume Plugin이다. CSI는 메소스, 도커스웜등의 여러 컨테이너 오케스트레이션 커뮤니티들이 협력하여 스토리지 관리를 위한 공통 인터페이스인데, 쿠버네티스의 경우 1.3 이후부터 CSI를 지원하기 시작했다.
 
-향후 관련된 새로운 기능들은 CSI Volume Plugin에만 추가될 예정이기 때문에, 가급적 CSI를 활용하도록 하자. (물론 K8S 개발자나 커뮤니티에서는 여전히 FlexVolume을 지원하겠지만...)
+향후 관련된 새로운 기능들은 CSI Volume Plugin에만 추가될 예정이기 때문에, 가급적 CSI를 활용하도록 하는 것이 좋아 보인다. (물론 K8S 개발자나 커뮤니티에서는 여전히 FlexVolume을 지원하겠지만...)
 
-한 가지 더 차이가 있다면, CSI의 경우 Worker Node와 Block Volume Storage가 같은 리전의 같은 Availability Domain(AD)에 속해야 한다. FlexVolume Plugin의 경우 AD를 지정할 수 있다.  
+한 가지 더 차이가 있다면, CSI는 Worker Node와 Block Volume Storage가 같은 리전의 같은 Availability Domain(AD)에 속해야 한다. FlexVolume Volume Plugin의 경우 AD를 지정할 수 있다.  
 
 아래는 FlexVolume에서 AD를 지정하기 위한 Annotation이다.
 ```
@@ -34,7 +34,7 @@ oci (default)   oracle.com/oci                    Delete          Immediate     
 oci-bv          blockvolume.csi.oraclecloud.com   Delete          WaitForFirstConsumer   false                  2d
 ```
 
-Persistent Volume Claim에서 사용할 Volume Plugin을 정의할 때 아래와 같이 Storage Class 이름을 지정하면 된다.
+Persistent Volume Claim (PVC)에서 사용할 Volume Plugin을 정의할 때 아래와 같이 Storage Class 이름을 지정해서 작성할 수 있다.
 
 * CSI Volume Plugin을 사용할 경우의 Storage Class 이름: "oci-bv"
 * Flex Volume Plugin을 사용할 경우의 Storage Class: "oci"
