@@ -39,9 +39,9 @@ Persistent Volume Claim (PVC)에서 사용할 Volume Plugin을 정의할 때 아
 * CSI Volume Plugin을 사용할 경우의 Storage Class 이름: "oci-bv"
 * Flex Volume Plugin을 사용할 경우의 Storage Class: "oci"
 
-### 예시 1: CSI Volume Plugin을 사용하여 Block Volume을 Persistent Volume으로 동적 생성하기
+### Example 1: CSI Volume Plugin을 사용하여 Block Volume을 Persistent Volume으로 동적 생성하기
 
-먼저 Persistent Volume Claim 아래와 같이 정의한 후 생성한다. CSI Volume Plugin을 사용할 것이므로 StorageClassName은 oci-bv이고, ReadWriteOne의 50기가짜리 Block Volume을 요청한다.
+먼저 Persistent Volume Claim을 아래와 같이 정의한 후 생성한다. CSI Volume Plugin을 사용할 것이므로 StorageClassName은 oci-bv이고, ReadWriteOne의 50기가짜리 Block Volume을 요청한다.
 
 ***csi-bvs-pvc.yaml***
 ```
@@ -117,7 +117,7 @@ OCI Console에서 Block Volume이 하나 생선된 것을 확인할 수 있다.
 Attached Instance 목록에 Attached Worker Node를 확인할 수 있다.
 ![](../assets/images/oci-oke-bv-pv-1.png)
 
-### 예시 2: FlexVolume Volume Plugin을 사용하여 Block Volume을 Persistent Volume으로 동적 생성하기
+### Example 2: FlexVolume Volume Plugin을 사용하여 Block Volume을 Persistent Volume으로 동적 생성하기
 
 이번에는 FlexVolume Volume Plugin을 사용한다. 마찬가지로 아래와 같이 pvc를 정의한다.  
 특이점은 matchLables에 특정 리전과 AD를 지정할 수 있다는 점이다.
@@ -191,7 +191,7 @@ Attached Instance 목록에 Attached Worker Node를 확인할 수 있다.
 ![](../assets/images/oci-oke-bv-pv-4.png)
 
 
-### 예시 3: FlexVolume Volume Plugin을 사용하여 Block Volume Backup을 통해 Persistent Volume 생성하기
+### Example 3: FlexVolume Volume Plugin을 사용하여 Block Volume Backup을 통해 Persistent Volume 생성하기
 
 미리 생성한 Block Volume 백업본을 통해 Persistent Volume을 생성할 수 있다. 이 경우에는 미리 생성한 Backup에 대한 OCID (OCI 콘솔에서 확인 가능)를 이용하여 PVC를 생성한 후 해당 PVC를 활용하여 Pod와 같은 Kubernetes의 Object에서 사용하면 된다.
 
