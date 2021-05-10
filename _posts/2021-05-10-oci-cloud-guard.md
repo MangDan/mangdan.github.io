@@ -1,5 +1,5 @@
 ---
-title:  "[OCI] Cloud Guard 소개
+title:  "[OCI] Cloud Guard 소개"
 date:   2021-05-10 09:50
 tags: ["OCI", "Cloud Guard"]
 ---
