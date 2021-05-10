@@ -61,7 +61,8 @@ Responder recipe rule의 경우 아래와 같이 제공되는데, 클론을 하�
 
 Responder Rule의 경우 Type이 NOTIFICATION과 REMEDIATION이 있는데, NOTIFICATION은 발생한 Problem을 OCI Notification 서비스등을 활용하여 알림을 발생시키는 유형이며, REMEDIATION은 Problem을 자동 혹은 관리자에 의해 수정을 보정할 수 있도록 해주는 유형으로, Responder Rules에 있는 내용에 따라서 관련 유형의 Respoder가 동작하게 된다.
 
-NOTIFICATION 유형은 현재 Cloud Event Rule만 대상이며, 사용을 위해서는 OCI Event와 Notification 서비스를 구성하여 사용할 수 있다. 관련 가이드는 아래 링크에서 확인할 수 있다.
+NOTIFICATION 유형은 현재 Cloud Event Rule만 대상이며, 사용을 위해서는 OCI Event와 Notification 서비스를 구성하여 사용할 수 있다.  
+관련 가이드는 아래 링크에서 확인해볼 수 있다.
 
 > https://docs.oracle.com/en-us/iaas/cloud-guard/using/export-notifs-config.htm
 
