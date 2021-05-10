@@ -59,7 +59,8 @@ Cloud Guard에서 모니터링 할 TARGET을 지정한다. Detector recipe의 �
 Responder recipe rule의 경우 아래와 같이 제공되는데, 클론을 하게 되면 사용자가 내용을 수정할 수 있다.
 ![](../assets/images/oci-cloudguard-8.png)
 
-Responder Rule의 경우 Type이 NOTIFICATION과 REMEDIATION이 있는데, NOTIFICATION은 발생한 Problem을 OCI Notification 서비스등을 활용하여 알림을 발생시키는 유형이며, REMEDIATION은 Problem을 자동 혹은 관리자에 의해 수정을 보정할 수 있도록 해주는 유형으로, Responder Rules에 있는 내용에 따라서 관련 유형의 Respoder가 동작하게 된다.
+Responder Rule의 경우 Type이 NOTIFICATION과 REMEDIATION 2 가지 유형이 보이는데, NOTIFICATION의 경우 발생한 Problem에 대한 알림이 OCI Event와 Notification 서비스를 통해서 이메일이나 OCI Function등과 연동할 수 있는 유형이며, REMEDIATION은 Problem을 자동 혹은 관리자에 의해 문제를 보정할 수 있도록 해주는 유형이다.  
+Responder Rules에 있는 내용에 따라서 관련 유형의 Respoder가 동작하게 된다.
 
 NOTIFICATION 유형은 현재 Cloud Event Rule만 대상이며, 사용을 위해서는 OCI Event와 Notification 서비스를 구성하여 사용할 수 있다.  
 관련 가이드는 아래 링크에서 확인해볼 수 있다.
