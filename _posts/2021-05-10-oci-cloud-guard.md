@@ -12,7 +12,7 @@ Oracle Cloud Infrastructure(이하 OCI)에서 제공하는 보안 서비스중 �
 OCI의 Cloud Guard는 OCI내의 Compartment라 불리는 특정 구역에 대한 보안 상태를 통합적으로 모니터링하고, 문제를 감지하여 제안 및 조치를 취할 수 있도록 해주는 보안 서비스이다.
 
 ### Cloud Guard Concepts
-Cloud Guard를 사용하기 위해서는 아래 4개의 구성과 용어를 기억해 둘 필요가 있다.
+Cloud Guard를 사용하기 위해서는 아래 구성과 4개의 용어를 기억해 둘 필요가 있다.
 ![](../assets/images/oci-cloudguard-1.png)
 
 #### TARGET
